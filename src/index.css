@@ -87,6 +87,12 @@
   /* Force width to exactly 100% of viewport width */
 }
 
+/* Applied by JS when Card 4 fully exits — stays fixed to viewport, does not disappear */
+#floral-divider-container.divider-unpinned {
+  position: fixed !important;
+  top: -8vh !important;
+}
+
 @media (min-width: 768px) {
   #floral-divider-container {
     height: 15vh !important;

@@ -23,16 +23,16 @@ function startSlideshow() {
 function nextSlide() {
   const prevSlideIndex = currentSlide;
   currentSlide = (currentSlide + 1) % slides.length;
-  
+
   const incoming = slides[currentSlide];
   const outgoing = slides[prevSlideIndex];
-  
+
   if (motionQuery.matches) {
     // PREFERS-REDUCED-MOTION: Hard-cut immediately with no transitions or zoom
     outgoing.classList.replace('opacity-100', 'opacity-0');
     outgoing.classList.replace('z-10', 'z-0');
     outgoing.classList.remove('ken-burns');
-    
+
     incoming.classList.replace('opacity-0', 'opacity-100');
     incoming.classList.replace('z-0', 'z-10');
   } else {
@@ -41,11 +41,11 @@ function nextSlide() {
     incoming.classList.add('ken-burns');
     incoming.classList.replace('opacity-0', 'opacity-100');
     incoming.classList.replace('z-0', 'z-10');
-    
+
     // 2. Put outgoing slide underneath (z-0) and fade it out
     outgoing.classList.replace('z-10', 'z-0');
     outgoing.classList.replace('opacity-100', 'opacity-0');
-    
+
     // 3. Keep zoom active on the outgoing slide during transition, reset it after fade finishes (1.5s delay)
     setTimeout(() => {
       // Safety check: ensure it has not become active again in the meantime
@@ -60,7 +60,7 @@ function nextSlide() {
 if (motionQuery.addEventListener) {
   motionQuery.addEventListener('change', () => {
     startSlideshow();
-    
+
     if (motionQuery.matches) {
       // Immediately clear all Ken Burns zooms
       slides.forEach((slide) => slide.classList.remove('ken-burns'));
@@ -78,6 +78,8 @@ function initScrollAnimations() {
 
   const section = document.getElementById('card-stack-section');
   if (!section) return;
+
+  const floralDivider = document.getElementById('floral-divider-container');
 
   const cards = [
     document.getElementById('card-1'),
@@ -106,16 +108,21 @@ function initScrollAnimations() {
   function updateTransforms() {
     const rect = section.getBoundingClientRect();
     const vh = window.innerHeight;
-    
+
     // The sticky pinning container pins for a height of (sectionHeight - viewportHeight) = 500vh
     const totalScrollDist = 5 * vh;
     const currentScroll = -rect.top;
-    
+
     let progress = currentScroll / totalScrollDist;
     progress = Math.max(0, Math.min(1, progress));
 
     const segmentProgress = progress * 6; // 6 segments total (0 to 6)
     const activeSegment = Math.floor(segmentProgress); // 0 to 5
+
+    // Unpin floral divider once Card 4 (Product Gift Boxes) is completely out of frame (segment 5)
+    if (floralDivider) {
+      floralDivider.classList.toggle('divider-unpinned', activeSegment >= 5);
+    }
 
     function setCardTransform(card, translateY, scale) {
       const newTransform = `translateY(${translateY}) scale(${scale})`;

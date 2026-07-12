@@ -115,23 +115,23 @@
       <div
         class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] pt-16 px-6 pb-8 flex flex-col justify-start text-left pointer-events-auto"
         id="card-1" style="transform: translateY(0px) scale(1); z-index: 50;">
-        
+
         <!-- Eyebrow (Rendered before heading+image) -->
-        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-2 relative z-10">Signature Collection</span>
-        
+        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-2 relative z-10">Signature
+          Collection</span>
+
         <!-- Overlapping Heading + Image Area -->
         <div class="relative w-full min-h-[110px] mb-6">
           <!-- Heading (Lower z-index) -->
-          <h3 class="font-display font-light text-2xl text-[#F2EAE4] leading-tight text-left relative z-10 pr-24 select-none">
+          <h3
+            class="font-display font-light text-2xl text-[#F2EAE4] leading-tight text-left relative z-10 pr-24 select-none">
             Butterfly Light-Up Collection
           </h3>
           <!-- Transparent Rotated Image (Higher z-index, overlapping top/right of heading) -->
-          <div class="absolute right-[-10px] top-[-35px] w-[50%] aspect-[16/9] z-20 pointer-events-none select-none" style="transform: rotate(-8deg);">
-            <img 
-              src="/images/butterfly_fixed.png" 
-              alt="Handcrafted bouquet with glowing butterflies" 
-              class="w-full h-full object-contain object-center"
-            />
+          <div class="absolute right-[-10px] top-[-35px] w-[50%] aspect-[16/9] z-20 pointer-events-none select-none"
+            style="transform: rotate(-8deg);">
+            <img src="/images/butterfly_fixed.png" alt="Handcrafted bouquet with glowing butterflies"
+              class="w-full h-full object-contain object-center" />
           </div>
         </div>
 
@@ -141,7 +141,8 @@
         </p>
 
         <!-- CTA Link (Right-aligned, bottom-pinned) -->
-        <a href="#/butterfly-collection" class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 mt-auto pointer-events-auto relative z-10">
+        <a href="#/butterfly-collection"
+          class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 mt-auto pointer-events-auto relative z-10">
           ----------&rarr; checkout
         </a>
       </div>
@@ -180,12 +181,22 @@
     </div>
   </section>
 
-  <!-- Footer Placeholder Section (Hidden on Desktop) -->
-  <footer id="footer-placeholder"
-    class="w-full bg-[#150F1B] py-16 flex items-center justify-center md:hidden border-t border-[#F2EAE4]/5">
-    <div class="text-[#F2EAE4]/30 text-xs tracking-widest uppercase font-light">
-      Footer Placeholder
+  <footer id="site-footer" class="relative w-full overflow-hidden" style="min-height: 100svh;">
+
+    <div class="absolute inset-0"
+      style="background-image: url('/images/floral_footer.jpeg'); background-size: cover; background-position: center center;"
+      aria-hidden="true"></div>
+
+    <div class="absolute inset-0 bg-black/[0.12] pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 flex items-center justify-center px-5 py-14 sm:px-10 md:px-20 lg:px-36"
+      style="min-height: 100svh;">
+      <div id="footer-panel"
+        class="w-full max-w-3xl rounded-[32px] border border-white/[0.14] shadow-[0_4px_48px_rgba(0,0,0,0.07)]"
+        style="background: rgba(255,255,255,0.11); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); min-height: 60vh; padding: clamp(2rem, 6vw, 4.5rem);">
+      </div>
     </div>
+
   </footer>
 
   <!-- Vanilla Javascript Module Entrypoint -->
