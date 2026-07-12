@@ -1,134 +1,195 @@
 <!doctype html>
 <html lang="en" class="h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Art-directed preloading for the very first hero photo -->
-    <link rel="preload" href="/images/Pic1_Desktop.jpeg" as="image" media="(min-width: 768px)" />
-    <link rel="preload" href="/images/Pic1_Mobile.jpeg" as="image" media="(max-width: 767px)" />
-    
-    <title>Zoya Florals — Handcrafted Bouquets & Bespoke Gift Experiences</title>
-  </head>
-  <body class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB]">
-    <!-- Hero Section Rebuild: 65/35 Split Layout -->
-    <section 
-      id="hero-container"
-      class="relative w-full h-screen bg-[#1A1420] overflow-hidden flex flex-col md:flex-row select-none"
-      aria-label="Zoya Florals Hero Lookbook"
-    >
-      <!-- LEFT / TOP SIDE: Bouquet Slideshow (65vw desktop / 65vh mobile) -->
-      <div 
-        id="slideshow-wrapper"
-        class="relative overflow-hidden w-full h-[65vh] md:w-[65vw] md:h-full"
-      >
-        <!-- Art-Directed Slides -->
-        <picture class="slide absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out ken-burns">
-          <source media="(min-width: 768px)" srcset="/images/Pic1_Desktop.jpeg">
-          <img src="/images/Pic1_Mobile.jpeg" alt="Signature luxury crimson rose bouquet arranged with structural red wraps" class="w-full h-full object-cover object-center" />
-        </picture>
 
-        <picture class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-          <source media="(min-width: 768px)" srcset="/images/Pic2_Desktop.jpeg">
-          <img src="/images/Pic2_Mobile.jpeg" alt="Elegantly draped red rose bouquet lined with dark foliage in sleek black wrapping" class="w-full h-full object-cover object-center" loading="lazy" />
-        </picture>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-        <picture class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-          <source media="(min-width: 768px)" srcset="/images/Pic3_Desktop.jpeg">
-          <img src="/images/Pic3_Mobile.jpeg" alt="Angelic white wrap bouquet decorated with feather wings and matching silk ribbons" class="w-full h-full object-cover object-center" loading="lazy" />
-        </picture>
+  <!-- Art-directed preloading for the very first hero photo -->
+  <link rel="preload" href="/images/Pic1_Desktop.jpeg" as="image" media="(min-width: 768px)" />
+  <link rel="preload" href="/images/Pic1_Mobile.jpeg" as="image" media="(max-width: 767px)" />
 
-        <picture class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
-          <source media="(min-width: 768px)" srcset="/images/Pic4_Desktop.jpeg">
-          <img src="/images/Pic4_Mobile.jpeg" alt="Heart-shaped arrangement of rich roses and golden chocolates presented on a velvet chair" class="w-full h-full object-cover object-center" loading="lazy" />
-        </picture>
+  <title>Zoya Florals — Handcrafted Bouquets & Bespoke Gift Experiences</title>
+</head>
 
-        <!-- COLOR TREATMENT: Shared Grading & Vignette Overlays -->
-        <!-- Subtle warm/plum color grade (Rose) -->
-        <div class="absolute inset-0 bg-[#D4457C] mix-blend-color opacity-[0.12] pointer-events-none z-20" aria-hidden="true"></div>
-        <!-- Dark plum depth multiplier -->
-        <div class="absolute inset-0 bg-[#1A1420] mix-blend-multiply opacity-[0.15] pointer-events-none z-20" aria-hidden="true"></div>
-        <!-- Edge vignette darkening -->
-        <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,transparent_45%,rgba(26,20,32,0.8)_100%)] z-20" aria-hidden="true"></div>
+<body
+  class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB]">
+  <!-- Hero Section Rebuild: 65/35 Split Layout -->
+  <section id="hero-container"
+    class="relative w-full h-screen bg-[#1A1420] overflow-hidden flex flex-col md:flex-row select-none"
+    aria-label="Zoya Florals Hero Lookbook">
+    <!-- LEFT / TOP SIDE: Bouquet Slideshow (65vw desktop / 65vh mobile) -->
+    <div id="slideshow-wrapper" class="relative overflow-hidden w-full h-[65vh] md:w-[65vw] md:h-full">
+      <!-- Art-Directed Slides -->
+      <picture
+        class="slide absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out ken-burns">
+        <source media="(min-width: 768px)" srcset="/images/Pic1_Desktop.jpeg">
+        <img src="/images/Pic1_Mobile.jpeg"
+          alt="Signature luxury crimson rose bouquet arranged with structural red wraps"
+          class="w-full h-full object-cover object-center" />
+      </picture>
+
+      <picture
+        class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+        <source media="(min-width: 768px)" srcset="/images/Pic2_Desktop.jpeg">
+        <img src="/images/Pic2_Mobile.jpeg"
+          alt="Elegantly draped red rose bouquet lined with dark foliage in sleek black wrapping"
+          class="w-full h-full object-cover object-center" loading="lazy" />
+      </picture>
+
+      <picture
+        class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+        <source media="(min-width: 768px)" srcset="/images/Pic3_Desktop.jpeg">
+        <img src="/images/Pic3_Mobile.jpeg"
+          alt="Angelic white wrap bouquet decorated with feather wings and matching silk ribbons"
+          class="w-full h-full object-cover object-center" loading="lazy" />
+      </picture>
+
+      <picture
+        class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+        <source media="(min-width: 768px)" srcset="/images/Pic4_Desktop.jpeg">
+        <img src="/images/Pic4_Mobile.jpeg"
+          alt="Heart-shaped arrangement of rich roses and golden chocolates presented on a velvet chair"
+          class="w-full h-full object-cover object-center" loading="lazy" />
+      </picture>
+
+      <!-- COLOR TREATMENT: Shared Grading & Vignette Overlays -->
+      <!-- Subtle warm/plum color grade (Rose) -->
+      <div class="absolute inset-0 bg-[#D4457C] mix-blend-color opacity-[0.12] pointer-events-none z-20"
+        aria-hidden="true"></div>
+      <!-- Dark plum depth multiplier -->
+      <div class="absolute inset-0 bg-[#1A1420] mix-blend-multiply opacity-[0.15] pointer-events-none z-20"
+        aria-hidden="true"></div>
+      <!-- Edge vignette darkening -->
+      <div
+        class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,transparent_45%,rgba(26,20,32,0.8)_100%)] z-20"
+        aria-hidden="true"></div>
+    </div>
+
+    <!-- RIGHT / BOTTOM SIDE: Brand Identity (35vw desktop / 35vh mobile) -->
+    <div id="brand-wrapper"
+      class="relative w-full h-[35vh] md:w-[35vw] md:h-full bg-[#1A1420] flex items-center justify-start px-8 md:px-12 lg:px-16">
+      <!-- Completely Static Brand content -->
+      <div id="brand-content" class="max-w-md animate-fadeInUp text-left">
+        <!-- Brand Logo/Wordmark -->
+        <h1
+          class="font-display font-light tracking-[0.2em] text-2xl md:text-3xl lg:text-4xl text-[#F6F0EB] uppercase mb-4 md:mb-6">
+          Zoya Florals
+        </h1>
+
+        <!-- Elegant Display Editorial Headline -->
+        <h2
+          class="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-[#C9A84C] italic leading-tight mb-3 md:mb-5">
+          Every bouquet is a poem, handwritten in petals.
+        </h2>
+
+        <!-- Supportive Paragraph (High contrast WCAG AA compliant text color #CDBFC7) -->
+        <p class="font-body font-light text-[#CDBFC7] text-xs md:text-sm lg:text-base leading-relaxed max-w-sm">
+          We compose bespoke floral poetry and premium gift experiences, handcrafted in our studio for the moments that
+          transcend words.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <!-- RIGHT / BOTTOM SIDE: Brand Identity (35vw desktop / 35vh mobile) -->
-      <div 
-        id="brand-wrapper"
-        class="relative w-full h-[35vh] md:w-[35vw] md:h-full bg-[#1A1420] flex items-center justify-start px-8 md:px-12 lg:px-16"
-      >
-        <!-- Completely Static Brand content -->
-        <div 
-          id="brand-content"
-          class="max-w-md animate-fadeInUp text-left"
-        >
-          <!-- Brand Logo/Wordmark -->
-          <h1 class="font-display font-light tracking-[0.2em] text-2xl md:text-3xl lg:text-4xl text-[#F6F0EB] uppercase mb-4 md:mb-6">
-            Zoya Florals
-          </h1>
-          
-          <!-- Elegant Display Editorial Headline -->
-          <h2 class="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-[#C9A84C] italic leading-tight mb-3 md:mb-5">
-            Every bouquet is a poem, handwritten in petals.
-          </h2>
-          
-          <!-- Supportive Paragraph (High contrast WCAG AA compliant text color #CDBFC7) -->
-          <p class="font-body font-light text-[#CDBFC7] text-xs md:text-sm lg:text-base leading-relaxed max-w-sm">
-            We compose bespoke floral poetry and premium gift experiences, handcrafted in our studio for the moments that transcend words.
-          </p>
+  <!-- Card Stack Section (600vh track height configured in stylesheet) -->
+  <section id="card-stack-section" class="relative bg-[#1A1420] md:hidden">
+    <!-- Sticky Floral Divider Container (Constrained to h-auto on Mobile / 15vh on Desktop) -->
+    <div id="floral-divider-container"
+      class="sticky top-[-8vh] w-full h-auto md:h-[15vh] z-50 pointer-events-none overflow-hidden">
+      <!-- Transparent Floral Cutout PNG -->
+      <img src="/images/bouquet_cutout.png" alt="Handcrafted bouquet divider silhouette"
+        class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none" />
+    </div>
+
+    <!-- Sticky Cards Container (Flex centered viewport) -->
+    <div id="cards-container"
+      class="sticky top-0 w-full h-screen z-10 flex items-center justify-center px-6 pointer-events-none">
+      <!-- Card 1: Butterfly Light-Up Collection -->
+      <div
+        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] pt-16 px-6 pb-8 flex flex-col justify-start text-left pointer-events-auto"
+        id="card-1" style="transform: translateY(0px) scale(1); z-index: 50;">
+        
+        <!-- Eyebrow (Rendered before heading+image) -->
+        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-2 relative z-10">Signature Collection</span>
+        
+        <!-- Overlapping Heading + Image Area -->
+        <div class="relative w-full min-h-[110px] mb-6">
+          <!-- Heading (Lower z-index) -->
+          <h3 class="font-display font-light text-2xl text-[#F2EAE4] leading-tight text-left relative z-10 pr-24 select-none">
+            Butterfly Light-Up Collection
+          </h3>
+          <!-- Transparent Rotated Image (Higher z-index, overlapping top/right of heading) -->
+          <div class="absolute right-[-10px] top-[-35px] w-[50%] aspect-[16/9] z-20 pointer-events-none select-none" style="transform: rotate(-8deg);">
+            <img 
+              src="/images/butterfly_fixed.png" 
+              alt="Handcrafted bouquet with glowing butterflies" 
+              class="w-full h-full object-contain object-center"
+            />
+          </div>
         </div>
+
+        <!-- Supporting Description (Normal flow) -->
+        <p class="text-[#CDBFC7] text-xs leading-relaxed font-light mb-6 max-w-xs relative z-10">
+          Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry.
+        </p>
+
+        <!-- CTA Link (Right-aligned, bottom-pinned) -->
+        <a href="#/butterfly-collection" class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 mt-auto pointer-events-auto relative z-10">
+          ----------&rarr; checkout
+        </a>
       </div>
-    </section>
-
-    <!-- Card Stack Section (600vh track height configured in stylesheet) -->
-    <section id="card-stack-section" class="relative bg-[#1A1420] md:hidden">
-      <!-- Sticky Floral Divider Container (Constrained to h-auto on Mobile / 15vh on Desktop) -->
-      <div id="floral-divider-container" class="sticky top-[-10vh] w-full h-auto md:h-[15vh] z-50 pointer-events-none overflow-hidden">
-        <!-- Transparent Floral Cutout PNG -->
-        <img 
-          src="/images/bouquet_cutout.png" 
-          alt="Handcrafted bouquet divider silhouette" 
-          class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none"
-        />
+      <!-- Card 2: Theme Bouquets -->
+      <div
+        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
+        id="card-2" style="transform: translateY(12px) scale(0.97); z-index: 40;">
+        <h3
+          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
+          Theme Bouquets</h3>
       </div>
-
-      <!-- Sticky Cards Container (Flex centered viewport) -->
-      <div id="cards-container" class="sticky top-0 w-full h-screen z-10 flex items-center justify-center px-6 pointer-events-none">
-        <!-- Card 1: Butterfly Light-Up Collection -->
-        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-1" style="transform: translateY(0px) scale(1); z-index: 50;">
-          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Butterfly Light-Up Collection</h3>
-        </div>
-        <!-- Card 2: Theme Bouquets -->
-        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-2" style="transform: translateY(12px) scale(0.97); z-index: 40;">
-          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Theme Bouquets</h3>
-        </div>
-        <!-- Card 3: Chocolate Bouquets & Boxes -->
-        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-3" style="transform: translateY(24px) scale(0.94); z-index: 30;">
-          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Chocolate Bouquets & Boxes</h3>
-        </div>
-        <!-- Card 4: Product Gift Boxes -->
-        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-4" style="transform: translateY(36px) scale(0.91); z-index: 20;">
-          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Product Gift Boxes</h3>
-        </div>
-        <!-- Card 5: Custom Request -->
-        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-5" style="transform: translateY(48px) scale(0.88); z-index: 10;">
-          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Custom Request</h3>
-        </div>
+      <!-- Card 3: Chocolate Bouquets & Boxes -->
+      <div
+        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
+        id="card-3" style="transform: translateY(24px) scale(0.94); z-index: 30;">
+        <h3
+          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
+          Chocolate Bouquets & Boxes</h3>
       </div>
-    </section>
-
-    <!-- Footer Placeholder Section (Hidden on Desktop) -->
-    <footer id="footer-placeholder" class="w-full bg-[#150F1B] py-16 flex items-center justify-center md:hidden border-t border-[#F2EAE4]/5">
-      <div class="text-[#F2EAE4]/30 text-xs tracking-widest uppercase font-light">
-        Footer Placeholder
+      <!-- Card 4: Product Gift Boxes -->
+      <div
+        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
+        id="card-4" style="transform: translateY(36px) scale(0.91); z-index: 20;">
+        <h3
+          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
+          Product Gift Boxes</h3>
       </div>
-    </footer>
+      <!-- Card 5: Custom Request -->
+      <div
+        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
+        id="card-5" style="transform: translateY(48px) scale(0.88); z-index: 10;">
+        <h3
+          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
+          Custom Request</h3>
+      </div>
+    </div>
+  </section>
 
-    <!-- Vanilla Javascript Module Entrypoint -->
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <!-- Footer Placeholder Section (Hidden on Desktop) -->
+  <footer id="footer-placeholder"
+    class="w-full bg-[#150F1B] py-16 flex items-center justify-center md:hidden border-t border-[#F2EAE4]/5">
+    <div class="text-[#F2EAE4]/30 text-xs tracking-widest uppercase font-light">
+      Footer Placeholder
+    </div>
+  </footer>
+
+  <!-- Vanilla Javascript Module Entrypoint -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

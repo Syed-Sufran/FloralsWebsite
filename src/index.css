@@ -77,7 +77,8 @@
 /* Floral Divider Stacking & Sizing Constraints */
 #floral-divider-container {
   position: sticky !important;
-  top: -10vh !important; /* Move it slightly out of frame on top before pinning */
+  top: -8vh !important;
+  /* Move it slightly out of frame on top before pinning */
   z-index: 100 !important;
   /* Force high above the card stack contents */
   height: auto !important;
@@ -117,13 +118,15 @@
   top: 0 !important;
   height: 100vh !important;
   width: 100% !important;
-  clip-path: inset(2vh -100px -100px -100px) !important; /* Clips at top divider clip boundary line (2vh), allows peeking stack at bottom */
+  clip-path: inset(4vh -100px -100px -100px) !important;
+  /* Clips at top divider clip boundary line (4vh), allows peeking stack at bottom */
   z-index: 10 !important;
 }
 
 #card-stack-section {
   position: relative !important;
-  height: 600vh !important; /* 6 * 100vh: 1 buffer + 4 transitions + 1 hold */
+  height: 600vh !important;
+  /* 6 * 100vh: 1 buffer + 4 transitions + 1 hold */
 }
 
 /* Stacked Cards Styling and Layout */
@@ -133,7 +136,8 @@
   right: 24px !important;
   height: 70vh !important;
   border-radius: 16px !important;
-  background-color: #800080 !important; /* Purple surface color */
+  background-color: #4B1535 !important;
+  /* Purple surface color */
   box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.4) !important;
   will-change: transform !important;
 }
