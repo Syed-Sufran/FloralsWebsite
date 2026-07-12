@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    background-color: #1A1420;
+    color: #F6F0EB;
+    --card-clip-boundary: 12vh;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #1A1420;
+    color: #F6F0EB;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Custom selection styling to match the luxury floral theme */
+  ::selection {
+    background-color: #D4457C;
+    color: #F6F0EB;
+  }
+}
+
+/* Ken Burns slow zoom animation */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1.00);
+  }
+
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.ken-burns {
+  animation: kenBurnsZoom 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Reduced motion accessibility query */
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .ken-burns {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Fade in for brand panel content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Floral Divider Stacking & Sizing Constraints */
+#floral-divider-container {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  /* Force high above the card stack contents */
+  height: auto !important;
+  /* Mobile default: automatically scale to fit the natural height of the image */
+  width: 100vw !important;
+  /* Force width to exactly 100% of viewport width */
+}
+
+@media (min-width: 768px) {
+  #floral-divider-container {
+    height: 15vh !important;
+    /* Desktop override height: 15% of viewport height */
+  }
+}
+
+#floral-divider-container img {
+  position: relative !important;
+  z-index: 100 !important;
+  /* Ensure the image rendering layer matches the container stack */
+  width: 100% !important;
+  height: auto !important;
+  /* Mobile default: natural aspect ratio (fully visible, no crop) */
+}
+
+@media (min-width: 768px) {
+  #floral-divider-container img {
+    height: 100% !important;
+    /* Desktop override: fill container height */
+    object-fit: cover !important;
+    /* Desktop override: full-bleed cover styling */
+    object-position: center !important;
+  }
+}
+
+#cards-container {
+  position: relative !important;
+  z-index: 10 !important;
+  /* Ensure card stack content is layered underneath the floral divider */
+}
+
+/* Card Stack Section height sync (Divider + Cards Content height) */
+#card-stack-section {
+  min-height: 179vh !important;
+  /* Mobile default: ~29vh (217.8px) natural divider + 150vh cards */
+}
+
+@media (min-width: 768px) {
+  #card-stack-section {
+    display: none !important;
+    /* Completely hide card stack and floral divider on desktop viewports */
+  }
+}

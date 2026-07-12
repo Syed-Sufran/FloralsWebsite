@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Art-directed preloading for the very first hero photo -->
+    <link rel="preload" href="/images/Pic1_Desktop.jpeg" as="image" media="(min-width: 768px)" />
+    <link rel="preload" href="/images/Pic1_Mobile.jpeg" as="image" media="(max-width: 767px)" />
+    
+    <title>Zoya Florals — Handcrafted Bouquets & Bespoke Gift Experiences</title>
+  </head>
+  <body class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB]">
+    <!-- Hero Section Rebuild: 65/35 Split Layout -->
+    <section 
+      id="hero-container"
+      class="relative w-full h-screen bg-[#1A1420] overflow-hidden flex flex-col md:flex-row select-none"
+      aria-label="Zoya Florals Hero Lookbook"
+    >
+      <!-- LEFT / TOP SIDE: Bouquet Slideshow (65vw desktop / 65vh mobile) -->
+      <div 
+        id="slideshow-wrapper"
+        class="relative overflow-hidden w-full h-[65vh] md:w-[65vw] md:h-full"
+      >
+        <!-- Art-Directed Slides -->
+        <picture class="slide absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out ken-burns">
+          <source media="(min-width: 768px)" srcset="/images/Pic1_Desktop.jpeg">
+          <img src="/images/Pic1_Mobile.jpeg" alt="Signature luxury crimson rose bouquet arranged with structural red wraps" class="w-full h-full object-cover object-center" />
+        </picture>
+
+        <picture class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+          <source media="(min-width: 768px)" srcset="/images/Pic2_Desktop.jpeg">
+          <img src="/images/Pic2_Mobile.jpeg" alt="Elegantly draped red rose bouquet lined with dark foliage in sleek black wrapping" class="w-full h-full object-cover object-center" loading="lazy" />
+        </picture>
+
+        <picture class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+          <source media="(min-width: 768px)" srcset="/images/Pic3_Desktop.jpeg">
+          <img src="/images/Pic3_Mobile.jpeg" alt="Angelic white wrap bouquet decorated with feather wings and matching silk ribbons" class="w-full h-full object-cover object-center" loading="lazy" />
+        </picture>
+
+        <picture class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
+          <source media="(min-width: 768px)" srcset="/images/Pic4_Desktop.jpeg">
+          <img src="/images/Pic4_Mobile.jpeg" alt="Heart-shaped arrangement of rich roses and golden chocolates presented on a velvet chair" class="w-full h-full object-cover object-center" loading="lazy" />
+        </picture>
+
+        <!-- COLOR TREATMENT: Shared Grading & Vignette Overlays -->
+        <!-- Subtle warm/plum color grade (Rose) -->
+        <div class="absolute inset-0 bg-[#D4457C] mix-blend-color opacity-[0.12] pointer-events-none z-20" aria-hidden="true"></div>
+        <!-- Dark plum depth multiplier -->
+        <div class="absolute inset-0 bg-[#1A1420] mix-blend-multiply opacity-[0.15] pointer-events-none z-20" aria-hidden="true"></div>
+        <!-- Edge vignette darkening -->
+        <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,transparent_45%,rgba(26,20,32,0.8)_100%)] z-20" aria-hidden="true"></div>
+      </div>
+
+      <!-- RIGHT / BOTTOM SIDE: Brand Identity (35vw desktop / 35vh mobile) -->
+      <div 
+        id="brand-wrapper"
+        class="relative w-full h-[35vh] md:w-[35vw] md:h-full bg-[#1A1420] flex items-center justify-start px-8 md:px-12 lg:px-16"
+      >
+        <!-- Completely Static Brand content -->
+        <div 
+          id="brand-content"
+          class="max-w-md animate-fadeInUp text-left"
+        >
+          <!-- Brand Logo/Wordmark -->
+          <h1 class="font-display font-light tracking-[0.2em] text-2xl md:text-3xl lg:text-4xl text-[#F6F0EB] uppercase mb-4 md:mb-6">
+            Zoya Florals
+          </h1>
+          
+          <!-- Elegant Display Editorial Headline -->
+          <h2 class="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-[#C9A84C] italic leading-tight mb-3 md:mb-5">
+            Every bouquet is a poem, handwritten in petals.
+          </h2>
+          
+          <!-- Supportive Paragraph (High contrast WCAG AA compliant text color #CDBFC7) -->
+          <p class="font-body font-light text-[#CDBFC7] text-xs md:text-sm lg:text-base leading-relaxed max-w-sm">
+            We compose bespoke floral poetry and premium gift experiences, handcrafted in our studio for the moments that transcend words.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Stack Section -->
+    <section id="card-stack-section" class="relative min-h-[179vh] md:min-h-[165vh] bg-[#1A1420] md:hidden">
+      <!-- Sticky Floral Divider Container (Constrained to h-auto on Mobile / 15vh on Desktop) -->
+      <div id="floral-divider-container" class="sticky top-0 w-full h-auto md:h-[15vh] z-50 pointer-events-none overflow-hidden">
+        <!-- Transparent Floral Cutout PNG -->
+        <img 
+          src="/images/bouquet_cutout.png" 
+          alt="Handcrafted bouquet divider silhouette" 
+          class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none"
+        />
+
+      </div>
+
+      <!-- Cards Container Placeholder -->
+      <div id="cards-container" class="relative w-full px-8 pb-32 z-30">
+        <div class="h-[150vh] flex items-center justify-center text-[#C9A84C]/40">
+          Card Stack Placeholder (Visible during scrolling)
+        </div>
+      </div>
+    </section>
+
+    <!-- Vanilla Javascript Module Entrypoint -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
