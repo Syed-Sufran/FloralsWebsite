@@ -113,23 +113,59 @@
 }
 
 #cards-container {
-  position: absolute !important;
-  top: 110vh !important; /* Offset by 110vh to match the -10vh divider sticky pin trigger point */
-  left: 0 !important;
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
   width: 100% !important;
+  clip-path: inset(2vh -100px -100px -100px) !important; /* Clips at top divider clip boundary line (2vh), allows peeking stack at bottom */
   z-index: 10 !important;
-  /* Ensure card stack content is layered underneath the floral divider */
 }
 
-/* Card Stack Section height sync (Offset + Cards Content height) */
 #card-stack-section {
-  min-height: 260vh !important;
-  /* Mobile default: 110vh offset + 150vh cards */
+  position: relative !important;
+  height: 600vh !important; /* 6 * 100vh: 1 buffer + 4 transitions + 1 hold */
+}
+
+/* Stacked Cards Styling and Layout */
+.card {
+  position: absolute !important;
+  left: 24px !important;
+  right: 24px !important;
+  height: 70vh !important;
+  border-radius: 16px !important;
+  background-color: #800080 !important; /* Purple surface color */
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.4) !important;
+  will-change: transform !important;
+}
+
+#card-1 {
+  z-index: 50 !important;
+  transform: translateY(0px) scale(1);
+}
+
+#card-2 {
+  z-index: 40 !important;
+  transform: translateY(12px) scale(0.97);
+}
+
+#card-3 {
+  z-index: 30 !important;
+  transform: translateY(24px) scale(0.94);
+}
+
+#card-4 {
+  z-index: 20 !important;
+  transform: translateY(36px) scale(0.91);
+}
+
+#card-5 {
+  z-index: 10 !important;
+  transform: translateY(48px) scale(0.88);
 }
 
 @media (min-width: 768px) {
   #card-stack-section {
     display: none !important;
-    /* Completely hide card stack and floral divider on desktop viewports */
+    /* Completely hide card stack on desktop viewports */
   }
 }

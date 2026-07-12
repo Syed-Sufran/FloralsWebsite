@@ -84,8 +84,8 @@
       </div>
     </section>
 
-    <!-- Card Stack Section -->
-    <section id="card-stack-section" class="relative min-h-[260vh] bg-[#1A1420] md:hidden">
+    <!-- Card Stack Section (600vh track height configured in stylesheet) -->
+    <section id="card-stack-section" class="relative bg-[#1A1420] md:hidden">
       <!-- Sticky Floral Divider Container (Constrained to h-auto on Mobile / 15vh on Desktop) -->
       <div id="floral-divider-container" class="sticky top-[-10vh] w-full h-auto md:h-[15vh] z-50 pointer-events-none overflow-hidden">
         <!-- Transparent Floral Cutout PNG -->
@@ -94,16 +94,39 @@
           alt="Handcrafted bouquet divider silhouette" 
           class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none"
         />
-
       </div>
 
-      <!-- Cards Container Placeholder -->
-      <div id="cards-container" class="absolute top-[110vh] left-0 w-full px-8 pb-32 z-10">
-        <div class="h-[150vh] flex items-center justify-center text-[#C9A84C]/40">
-          Card Stack Placeholder (Visible during scrolling)
+      <!-- Sticky Cards Container (Flex centered viewport) -->
+      <div id="cards-container" class="sticky top-0 w-full h-screen z-10 flex items-center justify-center px-6 pointer-events-none">
+        <!-- Card 1: Butterfly Light-Up Collection -->
+        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-1" style="transform: translateY(0px) scale(1); z-index: 50;">
+          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Butterfly Light-Up Collection</h3>
+        </div>
+        <!-- Card 2: Theme Bouquets -->
+        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-2" style="transform: translateY(12px) scale(0.97); z-index: 40;">
+          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Theme Bouquets</h3>
+        </div>
+        <!-- Card 3: Chocolate Bouquets & Boxes -->
+        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-3" style="transform: translateY(24px) scale(0.94); z-index: 30;">
+          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Chocolate Bouquets & Boxes</h3>
+        </div>
+        <!-- Card 4: Product Gift Boxes -->
+        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-4" style="transform: translateY(36px) scale(0.91); z-index: 20;">
+          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Product Gift Boxes</h3>
+        </div>
+        <!-- Card 5: Custom Request -->
+        <div class="card absolute left-6 right-6 h-[70vh] rounded-2xl bg-[#800080] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto" id="card-5" style="transform: translateY(48px) scale(0.88); z-index: 10;">
+          <h3 class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">Custom Request</h3>
         </div>
       </div>
     </section>
+
+    <!-- Footer Placeholder Section (Hidden on Desktop) -->
+    <footer id="footer-placeholder" class="w-full bg-[#150F1B] py-16 flex items-center justify-center md:hidden border-t border-[#F2EAE4]/5">
+      <div class="text-[#F2EAE4]/30 text-xs tracking-widest uppercase font-light">
+        Footer Placeholder
+      </div>
+    </footer>
 
     <!-- Vanilla Javascript Module Entrypoint -->
     <script type="module" src="/src/main.js"></script>
