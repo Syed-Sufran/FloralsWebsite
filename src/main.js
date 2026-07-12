@@ -204,6 +204,42 @@ function initScrollAnimations() {
   setupScrollListener();
 }
 
+// Initialize Mobile Footer Accordion & Breathing Animation
+function initMobileFooter() {
+  const triggers = document.querySelectorAll('.footer-accordion-trigger');
+  const bgPhoto = document.getElementById('footer-bg-photo');
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      const content = trigger.nextElementSibling;
+
+      // Toggle current accordion
+      if (isExpanded) {
+        trigger.setAttribute('aria-expanded', 'false');
+        if (content) {
+          content.style.maxHeight = null;
+        }
+        // Zoom out transition for every "x" clicked
+        if (bgPhoto) {
+          bgPhoto.classList.remove('is-zoomed');
+        }
+      } else {
+        trigger.setAttribute('aria-expanded', 'true');
+        if (content) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+        // Zoom in transition for every "+" clicked (forces restart of transition)
+        if (bgPhoto) {
+          bgPhoto.classList.remove('is-zoomed');
+          void bgPhoto.offsetWidth;
+          bgPhoto.classList.add('is-zoomed');
+        }
+      }
+    });
+  });
+}
+
 // Initialize slideshow logic and scroll listeners
 function init() {
   if (slides.length > 0) {
@@ -214,6 +250,7 @@ function init() {
     startSlideshow();
   }
   initScrollAnimations();
+  initMobileFooter();
 }
 
 // Start once DOM is fully evaluated

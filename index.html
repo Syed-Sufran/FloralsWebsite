@@ -11,22 +11,23 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Art-directed preloading for the very first hero photo -->
   <link rel="preload" href="/images/Pic1_Desktop.jpeg" as="image" media="(min-width: 768px)" />
   <link rel="preload" href="/images/Pic1_Mobile.jpeg" as="image" media="(max-width: 767px)" />
 
-  <title>Zoya Florals — Handcrafted Bouquets & Bespoke Gift Experiences</title>
+  <meta name="description"
+    content="Zoya's Florals — bespoke handcrafted bouquets, butterfly light-up arrangements, chocolate gift boxes, and custom floral poetry for every occasion." />
+  <title>Zoya's Florals — Handcrafted Bouquets &amp; Bespoke Gift Experiences</title>
 </head>
 
 <body
   class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB]">
-  <!-- Hero Section Rebuild: 65/35 Split Layout -->
+
+  <!-- ═══════════════════════════════════════════════ HERO ═══ -->
   <section id="hero-container"
     class="relative w-full h-screen bg-[#1A1420] overflow-hidden flex flex-col md:flex-row select-none"
-    aria-label="Zoya Florals Hero Lookbook">
-    <!-- LEFT / TOP SIDE: Bouquet Slideshow (65vw desktop / 65vh mobile) -->
+    aria-label="Zoya's Florals Hero Lookbook">
+
     <div id="slideshow-wrapper" class="relative overflow-hidden w-full h-[65vh] md:w-[65vw] md:h-full">
-      <!-- Art-Directed Slides -->
       <picture
         class="slide absolute inset-0 w-full h-full opacity-100 z-10 transition-opacity duration-[1200ms] ease-in-out ken-burns">
         <source media="(min-width: 768px)" srcset="/images/Pic1_Desktop.jpeg">
@@ -34,7 +35,6 @@
           alt="Signature luxury crimson rose bouquet arranged with structural red wraps"
           class="w-full h-full object-cover object-center" />
       </picture>
-
       <picture
         class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
         <source media="(min-width: 768px)" srcset="/images/Pic2_Desktop.jpeg">
@@ -42,7 +42,6 @@
           alt="Elegantly draped red rose bouquet lined with dark foliage in sleek black wrapping"
           class="w-full h-full object-cover object-center" loading="lazy" />
       </picture>
-
       <picture
         class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
         <source media="(min-width: 768px)" srcset="/images/Pic3_Desktop.jpeg">
@@ -50,7 +49,6 @@
           alt="Angelic white wrap bouquet decorated with feather wings and matching silk ribbons"
           class="w-full h-full object-cover object-center" loading="lazy" />
       </picture>
-
       <picture
         class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
         <source media="(min-width: 768px)" srcset="/images/Pic4_Desktop.jpeg">
@@ -59,37 +57,26 @@
           class="w-full h-full object-cover object-center" loading="lazy" />
       </picture>
 
-      <!-- COLOR TREATMENT: Shared Grading & Vignette Overlays -->
-      <!-- Subtle warm/plum color grade (Rose) -->
       <div class="absolute inset-0 bg-[#D4457C] mix-blend-color opacity-[0.12] pointer-events-none z-20"
         aria-hidden="true"></div>
-      <!-- Dark plum depth multiplier -->
       <div class="absolute inset-0 bg-[#1A1420] mix-blend-multiply opacity-[0.15] pointer-events-none z-20"
         aria-hidden="true"></div>
-      <!-- Edge vignette darkening -->
       <div
         class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,transparent_45%,rgba(26,20,32,0.8)_100%)] z-20"
         aria-hidden="true"></div>
     </div>
 
-    <!-- RIGHT / BOTTOM SIDE: Brand Identity (35vw desktop / 35vh mobile) -->
     <div id="brand-wrapper"
       class="relative w-full h-[35vh] md:w-[35vw] md:h-full bg-[#1A1420] flex items-center justify-start px-8 md:px-12 lg:px-16">
-      <!-- Completely Static Brand content -->
       <div id="brand-content" class="max-w-md animate-fadeInUp text-left">
-        <!-- Brand Logo/Wordmark -->
         <h1
           class="font-display font-light tracking-[0.2em] text-2xl md:text-3xl lg:text-4xl text-[#F6F0EB] uppercase mb-4 md:mb-6">
-          Zoya Florals
+          Zoya's Florals
         </h1>
-
-        <!-- Elegant Display Editorial Headline -->
         <h2
           class="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-[#C9A84C] italic leading-tight mb-3 md:mb-5">
           Every bouquet is a poem, handwritten in petals.
         </h2>
-
-        <!-- Supportive Paragraph (High contrast WCAG AA compliant text color #CDBFC7) -->
         <p class="font-body font-light text-[#CDBFC7] text-xs md:text-sm lg:text-base leading-relaxed max-w-sm">
           We compose bespoke floral poetry and premium gift experiences, handcrafted in our studio for the moments that
           transcend words.
@@ -98,108 +85,447 @@
     </div>
   </section>
 
-  <!-- Card Stack Section (600vh track height configured in stylesheet) -->
+  <!-- ══════════════════════════════════════ MOBILE CARD STACK ═══ -->
   <section id="card-stack-section" class="relative bg-[#1A1420] md:hidden">
-    <!-- Sticky Floral Divider Container (Constrained to h-auto on Mobile / 15vh on Desktop) -->
+
     <div id="floral-divider-container"
       class="sticky top-[-8vh] w-full h-auto md:h-[15vh] z-50 pointer-events-none overflow-hidden">
-      <!-- Transparent Floral Cutout PNG -->
       <img src="/images/bouquet_cutout.png" alt="Handcrafted bouquet divider silhouette"
         class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none" />
     </div>
 
-    <!-- Sticky Cards Container (Flex centered viewport) -->
     <div id="cards-container"
       class="sticky top-0 w-full h-screen z-10 flex items-center justify-center px-6 pointer-events-none">
-      <!-- Card 1: Butterfly Light-Up Collection -->
+
+      <!-- Card 1 — Butterfly Light-Up Collection -->
       <div
         class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] pt-16 px-6 pb-8 flex flex-col justify-start text-left pointer-events-auto"
         id="card-1" style="transform: translateY(0px) scale(1); z-index: 50;">
 
-        <!-- Eyebrow (Rendered before heading+image) -->
-        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-2 relative z-10">Signature
-          Collection</span>
+        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-2 relative z-10"></span>
 
-        <!-- Overlapping Heading + Image Area -->
-        <div class="relative w-full min-h-[110px] mb-6">
-          <!-- Heading (Lower z-index) -->
+        <div class="relative w-full min-h-[320px] mb-10">
           <h3
             class="font-display font-light text-2xl text-[#F2EAE4] leading-tight text-left relative z-10 pr-24 select-none">
-            Butterfly Light-Up Collection
           </h3>
-          <!-- Transparent Rotated Image (Higher z-index, overlapping top/right of heading) -->
-          <div class="absolute right-[-10px] top-[-35px] w-[50%] aspect-[16/9] z-20 pointer-events-none select-none"
+          <div class="absolute right-[-10px] top-[0px] w-[78%] aspect-[16/9] z-20 pointer-events-none select-none"
             style="transform: rotate(-8deg);">
-            <img src="/images/butterfly_fixed.png" alt="Handcrafted bouquet with glowing butterflies"
-              class="w-full h-full object-contain object-center" />
           </div>
         </div>
 
-        <!-- Supporting Description (Normal flow) -->
-        <p class="text-[#CDBFC7] text-xs leading-relaxed font-light mb-6 max-w-xs relative z-10">
-          Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry.
-        </p>
+        <p class="text-[#CDBFC7] text-xs leading-relaxed font-light mb-6 max-w-xs relative z-10"></p>
 
-        <!-- CTA Link (Right-aligned, bottom-pinned) -->
         <a href="#/butterfly-collection"
-          class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 mt-auto pointer-events-auto relative z-10">
-          ----------&rarr; checkout
-        </a>
+          class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 mt-auto pointer-events-auto relative z-10"></a>
       </div>
-      <!-- Card 2: Theme Bouquets -->
-      <div
-        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
-        id="card-2" style="transform: translateY(12px) scale(0.97); z-index: 40;">
-        <h3
-          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
-          Theme Bouquets</h3>
+
+      <!-- Card 2 — Theme Bouquets -->
+      <div class="card overflow-hidden flex flex-col pointer-events-auto" id="card-2"
+        style="transform: translateY(12px) scale(0.97); z-index: 40;">
+        <div class="w-full flex-shrink-0" style="height: 44%;">
+          <img src="/images/bouquet-1.jpg" alt="Seasonal theme bouquets arranged with fresh florals"
+            class="w-full h-full object-cover object-center" loading="lazy" />
+        </div>
+        <div class="flex flex-col flex-1 px-6 pt-5 pb-7">
+          <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-2">Seasonal
+            Collection</span>
+          <h3 class="font-display font-light text-2xl text-[#F2EAE4] leading-tight mb-3">Theme Bouquets</h3>
+          <p class="text-[#CDBFC7] text-xs leading-relaxed font-light flex-1">
+            Each arrangement tells a seasonal story — fresh florals, curated textures, and colours that shift with every
+            occasion.
+          </p>
+          <a href="#/theme-bouquets"
+            class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 mt-3 pointer-events-auto">
+            ----------&rarr; checkout
+          </a>
+        </div>
       </div>
-      <!-- Card 3: Chocolate Bouquets & Boxes -->
-      <div
-        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
-        id="card-3" style="transform: translateY(24px) scale(0.94); z-index: 30;">
-        <h3
-          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
-          Chocolate Bouquets & Boxes</h3>
+
+      <!-- Card 3 — Chocolate Bouquets & Boxes -->
+      <div class="card overflow-hidden flex flex-col pointer-events-auto pt-10 px-6 pb-7" id="card-3"
+        style="transform: translateY(24px) scale(0.94); z-index: 30;">
+        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-3">Sweet Gifting</span>
+        <div class="flex flex-row gap-4 flex-1 min-h-0">
+          <div class="flex flex-col justify-between flex-1 min-w-0">
+            <div>
+              <h3 class="font-display font-light text-xl text-[#F2EAE4] leading-tight mb-3">Chocolate Bouquets &amp;
+                Boxes</h3>
+              <p class="text-[#CDBFC7] text-xs leading-relaxed font-light">
+                A decadent union of premium chocolates and handcrafted florals — the perfect indulgence for gifting.
+              </p>
+            </div>
+            <a href="#/chocolate-bouquets"
+              class="text-left text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 pointer-events-auto">
+              ----------&rarr; checkout
+            </a>
+          </div>
+          <div class="w-[42%] flex-shrink-0 rounded-xl overflow-hidden">
+            <img src="/images/bouquet-2.jpg" alt="Chocolate bouquets and gift boxes"
+              class="w-full h-full object-cover object-center" loading="lazy" />
+          </div>
+        </div>
       </div>
-      <!-- Card 4: Product Gift Boxes -->
-      <div
-        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
-        id="card-4" style="transform: translateY(36px) scale(0.91); z-index: 20;">
-        <h3
-          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
-          Product Gift Boxes</h3>
+
+      <!-- Card 4 — Product Gift Boxes -->
+      <div class="card overflow-hidden pointer-events-auto" id="card-4"
+        style="transform: translateY(36px) scale(0.91); z-index: 20;">
+        <img src="/images/bouquet-3.jpg" alt="Curated product gift boxes"
+          class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
+        <div class="absolute inset-0"
+          style="background: linear-gradient(to top, #1A1420 0%, rgba(26,20,32,0.55) 45%, transparent 100%);"></div>
+        <div class="absolute bottom-0 left-0 right-0 px-6 pb-7">
+          <span class="text-[#C9A84C]/70 text-[10px] tracking-[0.2em] font-light uppercase mb-2 block">Curated
+            Sets</span>
+          <h3 class="font-display font-light text-2xl text-[#F2EAE4] leading-tight mb-3">Product Gift Boxes</h3>
+          <p class="text-[#CDBFC7] text-xs leading-relaxed font-light mb-4">
+            Luxury hampers curated with intention — skincare, confectionery, and florals in one elegant box.
+          </p>
+          <a href="#/gift-boxes"
+            class="block text-right text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-widest transition-colors duration-300 pointer-events-auto">
+            ----------&rarr; checkout
+          </a>
+        </div>
       </div>
-      <!-- Card 5: Custom Request -->
-      <div
-        class="card absolute left-6 right-6 h-[75vh] rounded-2xl bg-[#4B1535] shadow-[0_-8px_30px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-auto"
+
+      <!-- Card 5 — Custom Request -->
+      <div class="card overflow-hidden pointer-events-auto flex flex-col items-center justify-center text-center px-8"
         id="card-5" style="transform: translateY(48px) scale(0.88); z-index: 10;">
-        <h3
-          class="font-display font-light text-xl md:text-2xl text-[#C9A84C] tracking-wider text-center uppercase px-4">
-          Custom Request</h3>
+        <img src="/images/bouquet-4.jpg" alt="Bespoke custom floral creation"
+          class="absolute inset-0 w-full h-full object-cover object-center opacity-20" loading="lazy" />
+        <div class="absolute inset-0"
+          style="background: radial-gradient(ellipse at center, transparent 30%, rgba(26,20,32,0.75) 100%);"></div>
+        <div class="relative z-10">
+          <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.2em] font-light uppercase mb-5 block">Bespoke
+            Studio</span>
+          <h3 class="font-display font-light text-3xl text-[#F2EAE4] italic leading-tight mb-4">
+            Something<br />uniquely yours.
+          </h3>
+          <p class="text-[#CDBFC7] text-xs leading-relaxed font-light mb-8 max-w-[240px] mx-auto">
+            Share your vision and we'll handcraft a one-of-a-kind floral experience around it.
+          </p>
+          <a href="https://wa.me/message/placeholder"
+            class="inline-block bg-[#C9A84C] hover:bg-[#D4B96A] text-[#1A1420] text-[10px] font-semibold tracking-[0.15em] uppercase px-7 py-3 rounded-full transition-colors duration-300 pointer-events-auto">
+            Request via WhatsApp
+          </a>
+        </div>
       </div>
+
     </div>
   </section>
 
+  <!-- ════════════════════════════════ DESKTOP COLLECTIONS ═══ -->
+  <section id="collections-section" class="hidden md:block bg-[#1A1420] py-24 px-12 lg:px-24">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.35em] font-light uppercase block mb-4">Our
+          Offerings</span>
+        <h2 class="font-display font-light text-4xl lg:text-5xl text-[#F2EAE4] mb-5">Curated Collections</h2>
+        <p class="text-[#CDBFC7] font-light text-sm max-w-md mx-auto leading-relaxed">
+          Every creation is a labour of love — composed with care for the moments that transcend words.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
+            <img src="/images/butterfly_fixed.png" alt="Butterfly Light-Up Collection"
+              class="w-full h-full object-contain object-center transition-transform duration-700 ease-out group-hover:scale-110 p-6"
+              loading="lazy" />
+          </div>
+          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Signature</span>
+          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Butterfly Light-Up</h3>
+          <a href="#/butterfly-collection"
+            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
+            &rarr;</a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
+            <img src="/images/bouquet-1.jpg" alt="Theme Bouquets"
+              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Seasonal</span>
+          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Theme Bouquets</h3>
+          <a href="#/theme-bouquets"
+            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
+            &rarr;</a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
+            <img src="/images/bouquet-2.jpg" alt="Chocolate Bouquets and Boxes"
+              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Sweet Gifting</span>
+          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Chocolate Bouquets</h3>
+          <a href="#/chocolate-bouquets"
+            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
+            &rarr;</a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
+            <img src="/images/bouquet-3.jpg" alt="Product Gift Boxes"
+              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Curated Sets</span>
+          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Gift Boxes</h3>
+          <a href="#/gift-boxes"
+            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
+            &rarr;</a>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="https://wa.me/message/placeholder"
+          class="inline-block border border-[#C9A84C]/40 hover:border-[#C9A84C] text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-[0.2em] uppercase px-10 py-4 rounded-full transition-all duration-500">
+          Request a Custom Order
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════ FOOTER ═══ -->
   <footer id="site-footer" class="relative w-full overflow-hidden" style="min-height: 100svh;">
 
-    <div class="absolute inset-0"
+    <div id="footer-bg-photo" class="absolute inset-0"
       style="background-image: url('/images/floral_footer.jpeg'); background-size: cover; background-position: center center;"
       aria-hidden="true"></div>
 
-    <div class="absolute inset-0 bg-black/[0.12] pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-black/[0.32] pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Desktop/Tablet Top Transition Overlay -->
+    <div class="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-b from-[#1A1420] to-transparent pointer-events-none hidden md:block" aria-hidden="true"></div>
 
     <div class="relative z-10 flex items-center justify-center px-5 py-14 sm:px-10 md:px-20 lg:px-36"
       style="min-height: 100svh;">
       <div id="footer-panel"
-        class="w-full max-w-3xl rounded-[32px] border border-white/[0.14] shadow-[0_4px_48px_rgba(0,0,0,0.07)]"
-        style="background: rgba(255,255,255,0.11); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); min-height: 60vh; padding: clamp(2rem, 6vw, 4.5rem);">
+        class="w-full max-w-3xl md:max-w-5xl lg:max-w-6xl rounded-[32px] border border-white/[0.14] shadow-[0_4px_48px_rgba(0,0,0,0.07)]"
+        style="background: rgba(255,255,255,0.11); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: clamp(2rem, 6vw, 4.5rem);">
+
+        <!-- Mobile Layout (Accordion) -->
+        <div class="block md:hidden">
+
+          <!-- Brand -->
+          <div class="text-center pb-8 mb-8 border-b border-white/[0.12]">
+            <h2 class="font-display font-light tracking-[0.25em] text-xl text-[#F2EAE4] uppercase mb-2">Zoya's Florals
+            </h2>
+            <p class="text-[#CDBFC7]/70 text-[11px] font-light tracking-wider italic">Handcrafted in our studio, with
+              love.</p>
+          </div>
+
+          <!-- Accordion -->
+          <div class="divide-y divide-white/[0.1] mb-10">
+
+            <div class="footer-accordion">
+              <button id="footer-acc-collections"
+                class="footer-accordion-trigger w-full flex items-center justify-between py-5 text-left"
+                aria-expanded="false">
+                <span class="text-[#F2EAE4]/80 text-[11px] tracking-[0.18em] font-light uppercase">Collections</span>
+                <span class="footer-accordion-icon text-[#C9A84C] text-lg font-light leading-none select-none">+</span>
+              </button>
+              <div class="footer-accordion-content">
+                <div class="pb-6 space-y-4 pl-1">
+                  <a
+                    class="block text-[#CDBFC7] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Butterfly
+                    Bouquet</a>
+                  <a
+                    class="block text-[#CDBFC7] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Themed
+                    Bouquet</a>
+                  <a
+                    class="block text-[#CDBFC7] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Chocolate
+                    Bouquet</a>
+                  <a
+                    class="block text-[#CDBFC7] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Product
+                    Gift Boxes</a>
+                  <a
+                    class="block text-[#CDBFC7] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">All
+                    Collections</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-accordion">
+              <button id="footer-acc-connect"
+                class="footer-accordion-trigger w-full flex items-center justify-between py-5 text-left"
+                aria-expanded="false">
+                <span class="text-[#F2EAE4]/80 text-[11px] tracking-[0.18em] font-light uppercase">Connect</span>
+                <span class="footer-accordion-icon text-[#C9A84C] text-lg font-light leading-none select-none">+</span>
+              </button>
+              <div class="footer-accordion-content">
+                <div class="pb-6 space-y-4 pl-1">
+                  <!-- Instagram (clickable) -->
+                  <a href="https://www.instagram.com/zoyasfloral__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-3 text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200">
+                    <svg class="w-[18px] h-[18px] text-white fill-current flex-shrink-0" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                    <span>@Zoya's Florals</span>
+                  </a>
+                  <!-- WhatsApp 1 (non-clickable) -->
+                  <div class="flex items-center gap-3 text-[#CDBFC7] text-xs font-light tracking-wide cursor-default">
+                    <svg class="w-[18px] h-[18px] text-white fill-current flex-shrink-0" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.725-1.455L0 24zm6.59-4.846c1.6.95 3.16 1.454 4.814 1.455 5.518 0 10.011-4.487 10.014-9.998.002-2.671-1.03-5.18-2.906-7.06A9.905 9.905 0 0012.01 1.666C6.49 1.666 2 6.153 1.998 11.664c-.001 1.761.465 3.479 1.353 5.011l-.995 3.635 3.728-.977zm11.374-7.514c-.3-.15-1.772-.875-2.046-.975-.276-.1-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-3.511-1.77-4.677-3.107-5.127-3.882-.3-.518-.033-.8.224-1.057.23-.23.3-.35.45-.525.15-.175.075-.3-.038-.525-.112-.225-.676-1.625-.926-2.225-.244-.588-.49-.508-.675-.518-.174-.009-.374-.01-.574-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.11 4.524.714.31 1.27.494 1.702.632.717.228 1.368.196 1.883.118.575-.088 1.772-.725 2.022-1.425.25-.7 2.5-2.475 2.5-3.175 0-.075-.075-.15-.375-.3z" />
+                    </svg>
+                    <span>9986759958</span>
+                  </div>
+                  <!-- WhatsApp 2 (non-clickable) -->
+                  <div class="flex items-center gap-3 text-[#CDBFC7] text-xs font-light tracking-wide cursor-default">
+                    <svg class="w-[18px] h-[18px] text-white fill-current flex-shrink-0" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.725-1.455L0 24zm6.59-4.846c1.6.95 3.16 1.454 4.814 1.455 5.518 0 10.011-4.487 10.014-9.998.002-2.671-1.03-5.18-2.906-7.06A9.905 9.905 0 0012.01 1.666C6.49 1.666 2 6.153 1.998 11.664c-.001 1.761.465 3.479 1.353 5.011l-.995 3.635 3.728-.977zm11.374-7.514c-.3-.15-1.772-.875-2.046-.975-.276-.1-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-3.511-1.77-4.677-3.107-5.127-3.882-.3-.518-.033-.8.224-1.057.23-.23.3-.35.45-.525.15-.175.075-.3-.038-.525-.112-.225-.676-1.625-.926-2.225-.244-.588-.49-.508-.675-.518-.174-.009-.374-.01-.574-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.11 4.524.714.31 1.27.494 1.702.632.717.228 1.368.196 1.883.118.575-.088 1.772-.725 2.022-1.425.25-.7 2.5-2.475 2.5-3.175 0-.075-.075-.15-.375-.3z" />
+                    </svg>
+                    <span>8105956981</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-accordion">
+              <button id="footer-acc-about"
+                class="footer-accordion-trigger w-full flex items-center justify-between py-5 text-left"
+                aria-expanded="false">
+                <span class="text-[#F2EAE4]/80 text-[11px] tracking-[0.18em] font-light uppercase">
+                  <h1>About</h1>
+                </span>
+                <span class="footer-accordion-icon text-[#C9A84C] text-lg font-light leading-none select-none">+</span>
+              </button>
+              <div class="footer-accordion-content">
+                <div class="pb-6 pl-1">
+                  <p class="text-[#CDBFC7] text-xs font-light leading-relaxed max-w-xl">
+                    Every bouquet begins with a story. At Zoya Florals, we craft bespoke bouquets and curated gift
+                    experiences designed around the people, moments, and emotions that matter most. Each creation is
+                    thoughtfully handcrafted in our studio, making every gift feel personal, meaningful, and one of a
+                    kind.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Copyright -->
+          <p class="text-center text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em]">
+            &copy; 2025 Zoya's Florals &middot; All rights reserved
+          </p>
+        </div>
+
+        <!-- Desktop / Tablet Layout -->
+        <div class="hidden md:block text-left">
+
+          <div class="grid grid-cols-[38%_20%_14%_1fr] gap-x-8 gap-y-12">
+
+            <!-- Column 1: Brand -->
+            <div class="flex flex-col items-start justify-start pt-1 pr-4 text-left">
+              <h2 class="font-display font-light tracking-[0.25em] text-2xl text-[#F2EAE4] uppercase mb-3">ZOYA's
+                FLORALS
+              </h2>
+              <p class="text-[#CDBFC7]/60 text-[11px] font-light tracking-wider italic">Handcrafted in our studio, with
+                love.</p>
+            </div>
+
+            <!-- Column 2: Collections -->
+            <div>
+              <h3 class="font-display font-light text-[#F2EAE4]/80 text-sm tracking-[0.18em] uppercase mb-6">
+                Collections</h3>
+              <div class="space-y-4">
+                <a
+                  class="block text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Butterfly
+                  Bouquet</a>
+                <a
+                  class="block text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Theme
+                  Bouquets</a>
+                <a
+                  class="block text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Chocolate
+                  Bouquets</a>
+                <a
+                  class="block text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">Product
+                  Gift Boxes</a>
+                <a
+                  class="block text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 cursor-default">All
+                  Collections</a>
+              </div>
+            </div>
+
+            <!-- Column 3: Connect -->
+            <div>
+              <h3 class="font-display font-light text-[#F2EAE4]/80 text-sm tracking-[0.18em] uppercase mb-6">Connect
+              </h3>
+              <div class="space-y-4">
+                <!-- Instagram (clickable) -->
+                <a href="https://www.instagram.com/zoyasfloral__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-3 text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200">
+                  <svg class="w-[18px] h-[18px] text-white fill-current flex-shrink-0" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+                <!-- WhatsApp 1 (non-clickable) -->
+                <div class="flex items-center gap-3 text-[#CDBFC7] text-xs font-light tracking-wide cursor-default">
+                  <svg class="w-[18px] h-[18px] text-white fill-current flex-shrink-0" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.725-1.455L0 24zm6.59-4.846c1.6.95 3.16 1.454 4.814 1.455 5.518 0 10.011-4.487 10.014-9.998.002-2.671-1.03-5.18-2.906-7.06A9.905 9.905 0 0012.01 1.666C6.49 1.666 2 6.153 1.998 11.664c-.001 1.761.465 3.479 1.353 5.011l-.995 3.635 3.728-.977zm11.374-7.514c-.3-.15-1.772-.875-2.046-.975-.276-.1-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-3.511-1.77-4.677-3.107-5.127-3.882-.3-.518-.033-.8.224-1.057.23-.23.3-.35.45-.525.15-.175.075-.3-.038-.525-.112-.225-.676-1.625-.926-2.225-.244-.588-.49-.508-.675-.518-.174-.009-.374-.01-.574-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.11 4.524.714.31 1.27.494 1.702.632.717.228 1.368.196 1.883.118.575-.088 1.772-.725 2.022-1.425.25-.7 2.5-2.475 2.5-3.175 0-.075-.075-.15-.375-.3z" />
+                  </svg>
+                  <span>9986759958</span>
+                </div>
+                <!-- WhatsApp 2 (non-clickable) -->
+                <div class="flex items-center gap-3 text-[#CDBFC7] text-xs font-light tracking-wide cursor-default">
+                  <svg class="w-[18px] h-[18px] text-white fill-current flex-shrink-0" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.725-1.455L0 24zm6.59-4.846c1.6.95 3.16 1.454 4.814 1.455 5.518 0 10.011-4.487 10.014-9.998.002-2.671-1.03-5.18-2.906-7.06A9.905 9.905 0 0012.01 1.666C6.49 1.666 2 6.153 1.998 11.664c-.001 1.761.465 3.479 1.353 5.011l-.995 3.635 3.728-.977zm11.374-7.514c-.3-.15-1.772-.875-2.046-.975-.276-.1-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-3.511-1.77-4.677-3.107-5.127-3.882-.3-.518-.033-.8.224-1.057.23-.23.3-.35.45-.525.15-.175.075-.3-.038-.525-.112-.225-.676-1.625-.926-2.225-.244-.588-.49-.508-.675-.518-.174-.009-.374-.01-.574-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.11 4.524.714.31 1.27.494 1.702.632.717.228 1.368.196 1.883.118.575-.088 1.772-.725 2.022-1.425.25-.7 2.5-2.475 2.5-3.175 0-.075-.075-.15-.375-.3z" />
+                  </svg>
+                  <span>8105956981</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 4: About -->
+            <div>
+              <h3 class="font-display font-light text-[#F2EAE4]/80 text-sm tracking-[0.18em] uppercase mb-6">About
+              </h3>
+              <p class="text-[#CDBFC7] text-xs font-light leading-relaxed max-w-[280px]">
+                Every bouquet begins with a story. At Zoya Florals, we craft bespoke bouquets and curated gift
+                experiences designed around the people, moments, and emotions that matter most. Each creation is
+                thoughtfully handcrafted in our studio, making every gift feel personal, meaningful, and one of a kind.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Bottom Area -->
+          <div class="mt-20 pt-8 border-t border-white/[0.08] flex items-center justify-between">
+            <p class="text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em] uppercase">
+              &copy; 2026 Zoya Florals
+            </p>
+            <p class="text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em] uppercase">
+              Ships Pan-India
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
 
   </footer>
 
-  <!-- Vanilla Javascript Module Entrypoint -->
   <script type="module" src="/src/main.js"></script>
 </body>
 
