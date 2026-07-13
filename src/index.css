@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Brittany Signature";
+  src:
+    url("/fonts/BrittanySignature-Regular.otf") format("opentype"),
+    url("/fonts/BrittanySignature-Regular.ttf") format("truetype"),
+    url("/fonts/BrittanySignature.otf") format("opentype"),
+    url("/fonts/BrittanySignature.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-brittany {
+  font-family: "Brittany Signature", cursive !important;
+}
+
 @layer base {
   :root {
     background-color: #1A1420;
