@@ -301,79 +301,79 @@
   </section>
 
   <!-- ════════════════════════════════ DESKTOP COLLECTIONS ═══ -->
-  <section id="collections-section" class="hidden md:block bg-[#1A1420] py-24 px-12 lg:px-24">
-    <div class="max-w-6xl mx-auto">
+  <section id="collections-section" class="relative hidden md:block bg-[#1A1420] py-32 px-12 lg:px-24 overflow-hidden">
+    <!-- Restrained darkened background behind the gallery -->
+    <div id="collections-bg-overlay" class="absolute inset-0 bg-black/0 transition-colors duration-[400ms] ease-out pointer-events-none z-0"></div>
 
-      <div class="text-center mb-16">
-        <span class="text-[#C9A84C]/60 text-[10px] tracking-[0.35em] font-light uppercase block mb-4">Our
-          Offerings</span>
-        <h2 class="font-display font-light text-4xl lg:text-5xl text-[#F2EAE4] mb-5">Curated Collections</h2>
-        <p class="text-[#CDBFC7] font-light text-sm max-w-md mx-auto leading-relaxed">
-          Every creation is a labour of love — composed with care for the moments that transcend words.
+    <div class="relative max-w-7xl mx-auto z-10">
+
+      <!-- Section Header -->
+      <div class="text-center mb-24 lg:mb-32">
+        <h2
+          class="font-display font-light tracking-[0.25em] text-4xl md:text-5xl lg:text-6xl text-[#F2EAE4] uppercase mb-6">
+          Collections
+        </h2>
+        <p class="text-[#CDBFC7] font-light text-sm md:text-base max-w-md mx-auto leading-relaxed italic tracking-wide">
+          Handcrafted collections for every story.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+      <!-- Editorial Canvas -->
+      <div class="relative w-full min-h-[950px] lg:min-h-[850px] select-none">
 
-        <div class="group cursor-pointer">
-          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
-            <img src="/images/butterfly_fixed.png" alt="Butterfly Light-Up Collection"
-              class="w-full h-full object-contain object-center transition-transform duration-700 ease-out group-hover:scale-110 p-6"
-              loading="lazy" />
-          </div>
-          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Signature</span>
-          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Butterfly Light-Up</h3>
-          <a href="#/butterfly-collection"
-            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
-            &rarr;</a>
+        <!-- Butterfly Bouquet (Largest - Primary Focus) -->
+        <div
+          class="absolute top-[-17%] right-[4%] xl:right-[8%] w-[44%] max-w-[650px] min-w-[260px] flex flex-col items-center -rotate-12">
+          <img src="/images/butterfly_fixed.png" alt="Butterfly Bouquet Collection"
+            class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
+            data-title="Butterfly Light-Up Collection"
+            data-body="Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry." />
+          <div class="collection-shadow w-[35%] h-[12px] bg-black/45 rounded-full blur-[8px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
         </div>
 
-        <div class="group cursor-pointer">
-          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
-            <img src="/images/bouquet-1.jpg" alt="Theme Bouquets"
-              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
-              loading="lazy" />
-          </div>
-          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Seasonal</span>
-          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Theme Bouquets</h3>
-          <a href="#/theme-bouquets"
-            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
-            &rarr;</a>
+        <!-- BMW Bouquet (Smallest) -->
+        <div
+          class="absolute top-[-20%] left-[0%] xl:left-[0%] w-[34%] max-w-[450px] min-w-[140px] rotate-12 flex flex-col items-center">
+          <img src="/images/BMW.png" alt="BMW Bouquet Collection"
+            class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
+            data-title="Theme Bouquets"
+            data-body="Personalized handcrafted bouquets inspired by passions, memories and meaningful moments." />
+          <div class="collection-shadow w-[50%] h-[10px] bg-black/45 rounded-full blur-[6px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
         </div>
 
-        <div class="group cursor-pointer">
-          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
-            <img src="/images/bouquet-2.jpg" alt="Chocolate Bouquets and Boxes"
-              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
-              loading="lazy" />
-          </div>
-          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Sweet Gifting</span>
-          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Chocolate Bouquets</h3>
-          <a href="#/chocolate-bouquets"
-            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
-            &rarr;</a>
+        <!-- Gift Box Bouquet (Medium) -->
+        <div
+          class="absolute top-[18%] right-[3%] xl:right-[1%] w-[30%] max-w-[350px] min-w-[180px] flex flex-col items-center">
+          <img src="/images/Giftbox.png" alt="Gift Box Collection"
+            class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
+            data-title="Curated Gift Editions"
+            data-body="Bouquets built around what they'll actually use — makeup, keepsakes, and small indulgences." />
+          <div class="collection-shadow w-[65%] h-[10px] bg-black/45 rounded-full blur-[7px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
         </div>
 
-        <div class="group cursor-pointer">
-          <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-[#4B1535]">
-            <img src="/images/bouquet-3.jpg" alt="Product Gift Boxes"
-              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
-              loading="lazy" />
-          </div>
-          <span class="text-[#C9A84C]/50 text-[10px] tracking-widest uppercase block mb-1">Curated Sets</span>
-          <h3 class="font-display font-light text-lg text-[#F2EAE4] mb-2">Gift Boxes</h3>
-          <a href="#/gift-boxes"
-            class="text-[#C9A84C] text-xs tracking-widest hover:text-[#F2EAE4] transition-colors duration-300 inline-flex items-center gap-2">Explore
-            &rarr;</a>
+        <!-- Chocolate Bouquet (Slightly larger than Gift Box) -->
+        <div
+          class="absolute top-[37%] left-[30%] w-[30%] max-w-[350px] min-w-[210px] rotate-6 flex flex-col items-center">
+          <img src="/images/chocolate.png" alt="Chocolate Bouquet Collection"
+            class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
+            data-title="Chocolate Bouquets"
+            data-body="Gourmet chocolates arranged like blooms, wrapped for the moments that call for something sweeter." />
+          <div class="collection-shadow w-[60%] h-[12px] bg-black/45 rounded-full blur-[8px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
         </div>
 
-      </div>
+        <!-- Centered Editorial Frosted Glass Panel -->
+        <div id="collections-glass-panel" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none opacity-0 translate-y-8 transition-all duration-[400ms] ease-out flex items-center justify-center">
+          <div class="px-8 py-10 w-[90vw] max-w-[420px] text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/25">
+            <h3 id="panel-title" class="font-display font-light text-2xl lg:text-3xl text-[#F2EAE4] mb-3">Theme Bouquets</h3>
+            <p id="panel-body" class="text-[#CDBFC7] font-body font-light text-xs lg:text-sm leading-relaxed max-w-sm mx-auto">
+              Personalized handcrafted bouquets inspired by passions, memories and meaningful moments.
+            </p>
+            <span class="inline-block text-[#C9A84C] text-[11px] lg:text-xs font-sans font-light tracking-widest uppercase mt-6 border-b border-transparent">
+              Explore Collection &rarr;
+            </span>
+          </div>
+        </div>
 
-      <div class="text-center mt-16">
-        <a href="https://wa.me/message/placeholder"
-          class="inline-block border border-[#C9A84C]/40 hover:border-[#C9A84C] text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-light tracking-[0.2em] uppercase px-10 py-4 rounded-full transition-all duration-500">
-          Request a Custom Order
-        </a>
       </div>
 
     </div>

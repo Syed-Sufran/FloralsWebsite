@@ -226,3 +226,32 @@
 .footer-accordion-trigger[aria-expanded="true"] .footer-accordion-icon {
   transform: rotate(45deg);
 }
+
+/* ═══════════════════════════════ COLLECTIONS HOVER STYLES ═══ */
+.collection-img {
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity;
+}
+
+.collection-img.is-active {
+  transform: translateY(-10px) scale(1.05) !important;
+}
+
+.collection-img.is-receded {
+  opacity: 0.6 !important;
+}
+
+.collection-shadow {
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms cubic-bezier(0.16, 1, 0.3, 1), filter 450ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity, filter;
+}
+
+.collection-shadow.is-active {
+  transform: scale(1.1) !important;
+  opacity: 0.75 !important;
+  filter: blur(10px) !important;
+}
+
+.collection-shadow.is-receded {
+  opacity: 0.25 !important;
+}

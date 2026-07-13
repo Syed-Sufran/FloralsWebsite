@@ -240,6 +240,94 @@ function initMobileFooter() {
   });
 }
 
+// Initialize Collections Section Hover Animation (Desktop/Tablet)
+function initCollectionsHover() {
+  const images = document.querySelectorAll('.collection-img');
+  const bgOverlay = document.getElementById('collections-bg-overlay');
+  const glassPanel = document.getElementById('collections-glass-panel');
+  const panelTitle = document.getElementById('panel-title');
+  const panelBody = document.getElementById('panel-body');
+
+  if (images.length === 0 || !bgOverlay || !glassPanel || !panelTitle || !panelBody) return;
+
+  let activeIndex = -1;
+  let exitTimeout = null;
+
+  function updatePanel(title, body) {
+    panelTitle.textContent = title;
+    panelBody.textContent = body;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('mouseenter', () => {
+      // Clear exit timeout if transitioning directly between bouquets
+      if (exitTimeout) {
+        clearTimeout(exitTimeout);
+        exitTimeout = null;
+      }
+
+      activeIndex = index;
+
+      // Darken background overlay (restrained: bg-black/[0.18])
+      bgOverlay.classList.remove('bg-black/0');
+      bgOverlay.classList.add('bg-black/[0.18]');
+
+      // Setup dynamic panel content
+      const title = img.getAttribute('data-title') || 'Theme Bouquets';
+      const body = img.getAttribute('data-body') || '';
+      updatePanel(title, body);
+
+      // Fade-in and slide-up the glass panel
+      glassPanel.classList.remove('opacity-0', 'translate-y-8');
+      glassPanel.classList.add('opacity-100', 'translate-y-0');
+
+      // Update bouquet images and shadow styles
+      images.forEach((otherImg, otherIdx) => {
+        const otherShadow = otherImg.nextElementSibling;
+        if (otherIdx === index) {
+          otherImg.classList.add('is-active');
+          otherImg.classList.remove('is-receded');
+          if (otherShadow) {
+            otherShadow.classList.add('is-active');
+            otherShadow.classList.remove('is-receded');
+          }
+        } else {
+          otherImg.classList.remove('is-active');
+          otherImg.classList.add('is-receded');
+          if (otherShadow) {
+            otherShadow.classList.remove('is-active');
+            otherShadow.classList.add('is-receded');
+          }
+        }
+      });
+    });
+
+    img.addEventListener('mouseleave', () => {
+      // Set a tiny debounce delay to support smooth immediate transition between items without flash/flicker
+      exitTimeout = setTimeout(() => {
+        activeIndex = -1;
+
+        // Restore default background
+        bgOverlay.classList.remove('bg-black/[0.18]');
+        bgOverlay.classList.add('bg-black/0');
+
+        // Hide frosted glass panel
+        glassPanel.classList.remove('opacity-100', 'translate-y-0');
+        glassPanel.classList.add('opacity-0', 'translate-y-8');
+
+        // Reset all bouquet states
+        images.forEach((otherImg) => {
+          const otherShadow = otherImg.nextElementSibling;
+          otherImg.classList.remove('is-active', 'is-receded');
+          if (otherShadow) {
+            otherShadow.classList.remove('is-active', 'is-receded');
+          }
+        });
+      }, 50); // 50ms transition debounce
+    });
+  });
+}
+
 // Initialize slideshow logic and scroll listeners
 function init() {
   if (slides.length > 0) {
@@ -251,6 +339,7 @@ function init() {
   }
   initScrollAnimations();
   initMobileFooter();
+  initCollectionsHover();
 }
 
 // Start once DOM is fully evaluated
