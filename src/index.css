@@ -302,3 +302,14 @@
   opacity: 1 !important;
   transform: translate(-50%, 30%) rotate(-6deg) !important;
 }
+
+/* Rounded corners for media on the Butterfly Collection subpage */
+.butterfly-page img,
+.butterfly-page video {
+  border-radius: 10px !important;
+}
+
+.butterfly-page .columns-2 > div > div {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
