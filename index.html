@@ -303,7 +303,8 @@
   <!-- ════════════════════════════════ DESKTOP COLLECTIONS ═══ -->
   <section id="collections-section" class="relative hidden md:block bg-[#1A1420] py-32 px-12 lg:px-24 overflow-hidden">
     <!-- Restrained darkened background behind the gallery -->
-    <div id="collections-bg-overlay" class="absolute inset-0 bg-black/0 transition-colors duration-[400ms] ease-out pointer-events-none z-0"></div>
+    <div id="collections-bg-overlay"
+      class="absolute inset-0 bg-black/0 transition-colors duration-[400ms] ease-out pointer-events-none z-0"></div>
 
     <div class="relative max-w-7xl mx-auto z-10">
 
@@ -328,7 +329,28 @@
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             data-title="Butterfly Light-Up Collection"
             data-body="Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry." />
-          <div class="collection-shadow w-[35%] h-[12px] bg-black/45 rounded-full blur-[8px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
+          <div
+            class="collection-shadow absolute bottom-[-14px] left-1/2 -translate-x-1/2 w-[35%] h-[12px] bg-black/45 rounded-full blur-[8px] opacity-50 transition-all duration-400 ease-out">
+          </div>
+
+          <!-- Visually Attached Frosted Glass Panel -->
+          <div id="panel-butterfly"
+            class="collection-panel collection-panel-butterfly absolute bottom-[-60px] left-1/3 z-20 pointer-events-none opacity-0 duration-[450ms] ease-out">
+            <div
+              class="px-8 py-10 w-[90vw] max-w-[420px] text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/25">
+              <h3 class="font-display font-light text-2xl lg:text-3xl text-[#F2EAE4] mb-3 ">Butterfly Light-Up
+                Collection
+              </h3>
+              <p class="text-[#CDBFC7] font-body font-light text-xs lg:text-sm leading-relaxed max-w-sm mx-auto ">
+                Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral
+                poetry.
+              </p>
+              <span
+                class="inline-block text-[#C9A84C] text-[11px] lg:text-xs font-sans font-light tracking-widest uppercase mt-6 border-b border-transparent cursor-pointer">
+                Explore Collection &rarr;
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- BMW Bouquet (Smallest) -->
@@ -338,7 +360,25 @@
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             data-title="Theme Bouquets"
             data-body="Personalized handcrafted bouquets inspired by passions, memories and meaningful moments." />
-          <div class="collection-shadow w-[50%] h-[10px] bg-black/45 rounded-full blur-[6px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
+          <div
+            class="collection-shadow absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-[50%] h-[10px] bg-black/45 rounded-full blur-[6px] opacity-50 transition-all duration-400 ease-out">
+          </div>
+
+          <!-- Visually Attached Frosted Glass Panel -->
+          <div id="panel-bmw"
+            class="collection-panel collection-panel-bmw absolute bottom-0 left-1/2 z-20 pointer-events-none opacity-0 transition-all duration-[450ms] ease-out">
+            <div
+              class="px-8 py-10 w-[90vw] max-w-[420px] text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/25">
+              <h3 class="font-display font-light text-2xl lg:text-3xl text-[#F2EAE4] mb-3">Theme Bouquets</h3>
+              <p class="text-[#CDBFC7] font-body font-light text-xs lg:text-sm leading-relaxed max-w-sm mx-auto ">
+                Personalized handcrafted bouquets inspired by passions, memories and meaningful moments.
+              </p>
+              <span
+                class="inline-block text-[#C9A84C] text-[11px] lg:text-xs font-sans font-light tracking-widest uppercase mt-6 border-b border-transparent cursor-pointer">
+                Explore Collection &rarr;
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Gift Box Bouquet (Medium) -->
@@ -348,7 +388,25 @@
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             data-title="Curated Gift Editions"
             data-body="Bouquets built around what they'll actually use — makeup, keepsakes, and small indulgences." />
-          <div class="collection-shadow w-[65%] h-[10px] bg-black/45 rounded-full blur-[7px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
+          <div
+            class="collection-shadow absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-[65%] h-[10px] bg-black/45 rounded-full blur-[7px] opacity-50 transition-all duration-400 ease-out">
+          </div>
+
+          <!-- Visually Attached Frosted Glass Panel -->
+          <div id="panel-giftbox"
+            class="collection-panel collection-panel-giftbox absolute bottom-[-18px] left-1/2 z-20 pointer-events-none opacity-0 transition-all duration-[450ms] ease-out">
+            <div
+              class="px-8 py-10 w-[90vw] max-w-[420px] text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/25">
+              <h3 class="font-display font-light text-2xl lg:text-3xl text-[#F2EAE4] mb-3">Curated Gift Editions</h3>
+              <p class="text-[#CDBFC7] font-body font-light text-xs lg:text-sm leading-relaxed max-w-sm mx-auto">
+                Bouquets built around what they'll actually use, makeup, keepsakes, and small indulgences.
+              </p>
+              <span
+                class="inline-block text-[#C9A84C] text-[11px] lg:text-xs font-sans font-light tracking-widest uppercase mt-6 border-b border-transparent cursor-pointer">
+                Explore Collection &rarr;
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Chocolate Bouquet (Slightly larger than Gift Box) -->
@@ -358,19 +416,24 @@
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             data-title="Chocolate Bouquets"
             data-body="Gourmet chocolates arranged like blooms, wrapped for the moments that call for something sweeter." />
-          <div class="collection-shadow w-[60%] h-[12px] bg-black/45 rounded-full blur-[8px] mt-2 opacity-50 transition-all duration-400 ease-out"></div>
-        </div>
+          <div
+            class="collection-shadow absolute bottom-[-14px] left-1/2 -translate-x-1/2 w-[60%] h-[12px] bg-black/45 rounded-full blur-[8px] opacity-50 transition-all duration-400 ease-out">
+          </div>
 
-        <!-- Centered Editorial Frosted Glass Panel -->
-        <div id="collections-glass-panel" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none opacity-0 translate-y-8 transition-all duration-[400ms] ease-out flex items-center justify-center">
-          <div class="px-8 py-10 w-[90vw] max-w-[420px] text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/25">
-            <h3 id="panel-title" class="font-display font-light text-2xl lg:text-3xl text-[#F2EAE4] mb-3">Theme Bouquets</h3>
-            <p id="panel-body" class="text-[#CDBFC7] font-body font-light text-xs lg:text-sm leading-relaxed max-w-sm mx-auto">
-              Personalized handcrafted bouquets inspired by passions, memories and meaningful moments.
-            </p>
-            <span class="inline-block text-[#C9A84C] text-[11px] lg:text-xs font-sans font-light tracking-widest uppercase mt-6 border-b border-transparent">
-              Explore Collection &rarr;
-            </span>
+          <!-- Visually Attached Frosted Glass Panel -->
+          <div id="panel-chocolate"
+            class="collection-panel collection-panel-chocolate absolute bottom-[-15px] left-1/2 z-20 pointer-events-none opacity-0 transition-all duration-[450ms] ease-out">
+            <div
+              class="px-8 py-10 w-[90vw] max-w-[420px] text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-2xl shadow-black/25">
+              <h3 class="font-display font-light text-2xl lg:text-3xl text-[#F2EAE4] mb-3">Chocolate Bouquets</h3>
+              <p class="text-[#CDBFC7] font-body font-light text-xs lg:text-sm leading-relaxed max-w-sm mx-auto">
+                Gourmet chocolates arranged like blooms, wrapped for the moments that call for something sweeter.
+              </p>
+              <span
+                class="inline-block text-[#C9A84C] text-[11px] lg:text-xs font-sans font-light tracking-widest uppercase mt-6 border-b border-transparent cursor-pointer">
+                Explore Collection &rarr;
+              </span>
+            </div>
           </div>
         </div>
 
