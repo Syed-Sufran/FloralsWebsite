@@ -9,7 +9,9 @@ export default defineConfig({
       input: {
         main: 'index.html',
         butterfly: 'collections/butterfly/index.html',
-        themed: 'collections/themed/index.html'
+        themed: 'collections/themed/index.html',
+        chocolate: 'collections/chocolate-bouquet/index.html',
+        curated: 'collections/curated-gifts/index.html'
       }
     }
   }

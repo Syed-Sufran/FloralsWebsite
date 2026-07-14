@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Zoya's Florals — Curated Gift Edition. Custom keepsake boxes, personal mug bundles, and luxury floral gift pairings." />
+  <title>Curated Gift Edition — Zoya's Florals</title>
+</head>
+
+<body
+  class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB] themed-page">
+
+  <!-- Minimal Header -->
+  <header class="px-6 pt-12 pb-8 max-w-xl mx-auto">
+    <a href="/"
+      class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 block mb-6 select-none">
+      &larr; Back
+    </a>
+    <h1 class="font-display font-light tracking-[0.18em] text-[28px] leading-tight text-[#F2EAE4] uppercase">
+      Curated Gift Edition
+    </h1>
+  </header>
+
+  <!-- Masonry Gallery -->
+  <main class="px-6 pb-24 max-w-xl mx-auto">
+    <div class="columns-2 gap-3 space-y-6">
+
+      <!-- Product 1: Signature Keepsake Box -->
+      <div id="prod-card-0" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-0" src="/GiftBoxCollection/box.webp" alt="Signature Keepsake Box"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Signature Keepsake Box
+        </p>
+      </div>
+
+      <!-- Product 2: Royal Purple Bloom Box -->
+      <div id="prod-card-1" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-1" src="/GiftBoxCollection/purplebox.webp" alt="Royal Purple Bloom Box"
+            class="w-full h-auto object-cover aspect-[1.1] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Royal Purple Bloom Box
+        </p>
+      </div>
+
+      <!-- Product 3: Blushing Pink Gift Edition -->
+      <div id="prod-card-2" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-2" src="/GiftBoxCollection/pinkbox.webp" alt="Blushing Pink Gift Edition"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Blushing Pink Gift Edition
+        </p>
+      </div>
+
+      <!-- Product 4: Classic Floral Mug Bundle -->
+      <div id="prod-card-3" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-3" src="/GiftBoxCollection/mug.webp" alt="Classic Floral Mug Bundle"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Classic Floral Mug Bundle
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Full-Screen Takeover Overlay for Product 1 (Keepsake Box) -->
+  <div id="detail-overlay-0"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-0"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-0" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/box_img.jpg" alt="Keepsake Box Detail"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Video -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video src="/GiftBoxCollection/box_vid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
+              playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-0 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-0 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the Signature Keepsake Box from the Curated Gift Edition."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Signature Keepsake Box."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 2 (Royal Purple Bloom Box) -->
+  <div id="detail-overlay-1"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-1"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-1" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/purplebox_img.jpg" alt="Purple Box Detail 1"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/purplebox_img2.jpg" alt="Purple Box Detail 2"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 3: Video 1 -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video src="/GiftBoxCollection/purplebox_vid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
+              playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 4: Video 2 -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video src="/GiftBoxCollection/purplebox_vid2.mp4" class="max-w-full max-h-[52vh] object-contain" loop
+              playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the Royal Purple Bloom Box from the Curated Gift Edition."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Royal Purple Bloom Box."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 3 (Blushing Pink Gift Edition) -->
+  <div id="detail-overlay-2"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-2"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-2" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/pinkbox_img.jpg" alt="Pink Box Detail 1"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/pinkbox_img2.jpg" alt="Pink Box Detail 2"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 3: Video -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video src="/GiftBoxCollection/pinkbox_vid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
+              playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-2 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-2 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-2 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the Blushing Pink Gift Edition from the Curated Gift Edition."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Blushing Pink Gift Edition."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 4 (Classic Floral Mug Bundle) -->
+  <div id="detail-overlay-3"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-3"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-3" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/mug_img.jpg" alt="Mug Detail 1"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/GiftBoxCollection/mug_img2.jpg" alt="Mug Detail 2"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 3: Video -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video src="/GiftBoxCollection/mug_vid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
+              playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-3 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-3 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-3 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the Classic Floral Mug Bundle from the Curated Gift Edition."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Classic Floral Mug Bundle."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <script type="module" src="./curated-gifts.js"></script>
+</body>
+
+</html>

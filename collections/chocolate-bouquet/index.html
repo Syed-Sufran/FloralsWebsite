@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Zoya's Florals — Chocolate Bouquets collection. Fine chocolates styled like blossoms, wrapped elegantly for sweet memories." />
+  <title>Chocolate Bouquets — Zoya's Florals</title>
+</head>
+
+<body
+  class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB] themed-page">
+
+  <!-- Minimal Header -->
+  <header class="px-6 pt-12 pb-8 max-w-xl mx-auto">
+    <a href="/"
+      class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 block mb-6 select-none">
+      &larr; Back
+    </a>
+    <h1 class="font-display font-light tracking-[0.18em] text-[28px] leading-tight text-[#F2EAE4] uppercase">
+      Chocolate Bouquets
+    </h1>
+  </header>
+
+  <!-- Masonry Gallery -->
+  <main class="px-6 pb-24 max-w-xl mx-auto">
+    <div class="columns-2 gap-3 space-y-6">
+
+      <!-- Product 1: Portrait Aspect -->
+      <div id="prod-card-0" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-0" src="/ChocoBouquetCollection/cgold.webp" alt="Golden Luxury Rocher"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Golden Luxury Rocher
+        </p>
+      </div>
+
+      <!-- Product 2: Landscape/Squarish Aspect -->
+      <div id="prod-card-1" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-1" src="/ChocoBouquetCollection/ckinder.webp" alt="Kinder Enchantment Box"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Kinder Enchantment bouquet
+        </p>
+      </div>
+
+      <!-- Product 3: Portrait Aspect -->
+      <div id="prod-card-2" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-2" src="/ChocoBouquetCollection/cferero.webp" alt="Ferrero Classic Love"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Ferrero Classic Love
+        </p>
+      </div>
+
+      <!-- Product 4: Portrait Aspect -->
+      <div id="prod-card-3" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-3" src="/ChocoBouquetCollection/cblack.webp" alt="Midnight Noir for Him"
+            class="w-full h-auto object-cover aspect-[0.9] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Midnight Noir for Him
+        </p>
+      </div>
+
+      <!-- Product 5: Portrait Aspect -->
+      <div id="prod-card-4" class="break-inside-avoid flex flex-col cursor-pointer">
+        <div class="w-full bg-black/20 overflow-hidden">
+          <img id="prod-img-4" src="/ChocoBouquetCollection/cwhite.webp" alt="Blushing Pastel Blooms"
+            class="w-full h-auto object-cover aspect-[3/4] block transition-transform duration-300 hover:scale-[1.02]" />
+        </div>
+        <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
+          Blushing Pastel Blooms
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Full-Screen Takeover Overlay for Product 1 (Golden Luxury Rocher) -->
+  <div id="detail-overlay-0"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-0"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-0" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/670831589_17910829209381579_6992982473941094635_n.jpg"
+            alt="Golden Rocher Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 3: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/goldimg.jpg" alt="Golden Rocher Detail"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Video -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video
+              src="/ChocoBouquetCollection/AQMa3BCG2iOECcMrehFgxLK_HyGJ8vhl84xW0xhgZKnGv3jccCe8EEhukx97la668FQFHkWv4U7C4SHsBPFnNUf6qHrmlFj7.mp4"
+              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-0 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-0 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-0 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the exact design of the Golden Luxury Rocher bouquet."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Golden Luxury Rocher bouquet."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 2 (Kinder Enchantment Box) -->
+  <div id="detail-overlay-1"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-1"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-1" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/kinderimg.jpg" alt="Kinder Box Detail"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/kinderzoom.jpg" alt="Love Quote Rose Detail"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 3: Video -->
+        <div
+          class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
+          <div class="relative w-full h-[52vh] flex items-center justify-center">
+            <video
+              src="/ChocoBouquetCollection/Red roses and Harry Potter Kinder joy with those beautiful butterflies are absolutely gorgeous🥀.mp4"
+              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+            <!-- Custom Mute/Unmute toggle -->
+            <button
+              class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
+              <span class="mute-icon">🔇</span> <span class="mute-text">Muted</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-1 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the exact design of the Kinder Enchantment Box."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Kinder Enchantment Box."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 3 (Ferrero Classic Love) -->
+  <div id="detail-overlay-2"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-2"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-2" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/Chocolate bouquets are LOVE❤️Customisation Available.jpg"
+            alt="Ferrero Bouquet Love Quote"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/ferrero1.jpg" alt="Ferrero Bouquet Classic Look"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-2 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-2 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the exact design of the Ferrero Classic Love bouquet."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Ferrero Classic Love bouquet."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 4 (Midnight Noir for Him) -->
+  <div id="detail-overlay-3"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-3"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-3" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/Bouquet for him💋.jpg" alt="Midnight Noir for Him Slide 1"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/BFH1.jpg" alt="Midnight Noir for Him Slide 2"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 3: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/BFH.jpg" alt="Midnight Noir for Him Slide 2"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-3 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-3 text-sm text-[#F2EAE4] transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-3 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the exact design of the Midnight Noir for Him bouquet."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Midnight Noir for Him bouquet."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Full-Screen Takeover Overlay for Product 5 (Blushing Pastel Blooms) -->
+  <div id="detail-overlay-4"
+    class="fixed inset-0 z-50 bg-[#1A1420] flex flex-col justify-between hidden transition-opacity duration-300 opacity-0">
+
+    <!-- Overlay Header -->
+    <div class="px-6 pt-8 flex items-center justify-between w-full max-w-xl mx-auto">
+      <button id="close-overlay-4"
+        class="text-[#CDBFC7] hover:text-[#F2EAE4] text-xs font-light tracking-wide transition-colors duration-200 select-none">
+        &larr; Back
+      </button>
+    </div>
+
+    <!-- Swipeable Carousel Container -->
+    <div class="flex-1 flex flex-col justify-center w-full max-w-xl mx-auto overflow-hidden">
+      <div id="carousel-track-4" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full select-none"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+
+        <!-- Slide 1: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/Cute Bouquet🌸🤍 (2).jpg" alt="Blushing Pastel Blooms Slide 1"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
+          <img src="/ChocoBouquetCollection/Cute Bouquet🌸🤍 (3).jpg" alt="Blushing Pastel Blooms Slide 2"
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+        </div>
+
+
+
+      </div>
+
+      <!-- Dot Indicators -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="carousel-dot-4 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+        <span class="carousel-dot-4 text-sm text-[#F2EAE4]/30 transition-colors duration-200 select-none">●</span>
+      </div>
+    </div>
+
+    <!-- Overlay CTAs -->
+    <div class="flex flex-col items-center gap-4 pb-12 px-6 w-full max-w-xl mx-auto">
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to order the exact design of the Blushing Pastel Blooms."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Order this exact design &rarr;
+      </a>
+      <a href="https://wa.me/9986759958?text=Hello Zoya's Florals! I'd like to request something similar to the Blushing Pastel Blooms."
+        target="_blank" rel="noopener noreferrer"
+        class="text-[#C9A84C] hover:text-[#F2EAE4] text-xs font-sans font-light tracking-widest uppercase transition-colors duration-300 py-1 border-b border-transparent hover:border-[#F2EAE4]">
+        Request something similar &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <script type="module" src="./chocolate.js"></script>
+</body>
+
+</html>
