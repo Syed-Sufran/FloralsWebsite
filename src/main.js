@@ -545,6 +545,46 @@ function initDesktopCustomRequest() {
   });
 }
 
+// Hook Custom Bouquets Nav Link to trigger Mobile Custom Request Card or Desktop Custom Request Modal
+function initNavCustomRequest() {
+  const link = document.getElementById('nav-custom-bouquets');
+  if (!link) return;
+
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Check if desktop view
+    const isDesktop = window.innerWidth >= 768;
+
+    if (isDesktop) {
+      const desktopTrigger = document.getElementById('desktop-custom-request-trigger');
+      if (desktopTrigger) {
+        desktopTrigger.click();
+      }
+    } else {
+      const targetSec = document.getElementById('custom-request-section');
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Check if mobile card is already open
+      const card = document.getElementById('custom-request-card');
+      const toggleBtn = document.getElementById('custom-request-scroll-btn');
+      
+      if (card && (card.style.maxHeight === '0px' || card.style.maxHeight === '0' || !card.style.maxHeight)) {
+        if (toggleBtn) {
+          toggleBtn.click();
+        }
+      } else {
+        const textarea = document.getElementById('custom-request-textarea');
+        if (textarea) {
+          setTimeout(() => textarea.focus(), 150);
+        }
+      }
+    }
+  });
+}
+
 // Initialize slideshow logic and scroll listeners
 function init() {
   if (slides.length > 0) {
@@ -560,6 +600,7 @@ function init() {
   initMobileNav();
   initCustomRequest();
   initDesktopCustomRequest();
+  initNavCustomRequest();
 }
 
 // Start once DOM is fully evaluated

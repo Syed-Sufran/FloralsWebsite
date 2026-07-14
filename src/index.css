@@ -720,26 +720,26 @@
 
 /* ── Desktop/Tablet Bouquet Breathing Animations ────────────────────────── */
 :root {
-  --breath-y-bmw: -8px;
-  --breath-x-bmw: 2px;
-  --breath-y-butterfly: -10px;
-  --breath-x-butterfly: -3px;
-  --breath-y-giftbox: -9px;
-  --breath-x-giftbox: -2px;
-  --breath-y-chocolate: -7px;
-  --breath-x-chocolate: 2px;
+  --breath-y-bmw: -18px;
+  --breath-x-bmw: 4px;
+  --breath-y-butterfly: -22px;
+  --breath-x-butterfly: -5px;
+  --breath-y-giftbox: -20px;
+  --breath-x-giftbox: -4px;
+  --breath-y-chocolate: -16px;
+  --breath-x-chocolate: 4px;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   :root {
-    --breath-y-bmw: -4px;
-    --breath-x-bmw: 1px;
-    --breath-y-butterfly: -5px;
-    --breath-x-butterfly: -1px;
-    --breath-y-giftbox: -5px;
-    --breath-x-giftbox: -1px;
-    --breath-y-chocolate: -4px;
-    --breath-x-chocolate: 1px;
+    --breath-y-bmw: -9px;
+    --breath-x-bmw: 2px;
+    --breath-y-butterfly: -11px;
+    --breath-x-butterfly: -2px;
+    --breath-y-giftbox: -10px;
+    --breath-x-giftbox: -2px;
+    --breath-y-chocolate: -8px;
+    --breath-x-chocolate: 2px;
   }
 }
 
@@ -804,5 +804,45 @@
   }
   50% {
     transform: translate(var(--breath-x-chocolate), var(--breath-y-chocolate));
+  }
+}
+
+/* Mobile Page Background & Text Styling for all Collection Subpages (except Home Page) */
+@media (max-width: 767px) {
+  html:has(body.butterfly-page),
+  html:has(body.themed-page) {
+    background-color: transparent !important;
+  }
+
+  body.butterfly-page,
+  body.themed-page {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  body.butterfly-page::before,
+  body.themed-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: url('/images/Mobile_page_bg.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    pointer-events: none;
+  }
+
+  /* Change header headlines, back buttons, and product descriptions to #1A1420 */
+  body.butterfly-page header h1,
+  body.themed-page header h1,
+  body.butterfly-page header a,
+  body.themed-page header a,
+  body.butterfly-page main p,
+  body.themed-page main p {
+    color: #1A1420 !important;
   }
 }
