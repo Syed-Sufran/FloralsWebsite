@@ -400,6 +400,151 @@ function initMobileNav() {
   });
 }
 
+// Initialize Inline Custom Request Card (Mobile)
+function initCustomRequest() {
+  const toggleBtn = document.getElementById('custom-request-scroll-btn');
+  const card      = document.getElementById('custom-request-card');
+  const sendBtn   = document.getElementById('custom-request-send');
+  const textarea  = document.getElementById('custom-request-textarea');
+  const hint      = document.getElementById('custom-request-hint');
+
+  if (!toggleBtn || !card) return;
+
+  let isOpen = false;
+
+  function openCard() {
+    isOpen = true;
+    card.style.maxHeight = card.scrollHeight + 64 + 'px'; // +padding buffer
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+    // Re-measure after content renders in case scrollHeight was 0 on first paint
+    requestAnimationFrame(() => {
+      card.style.maxHeight = card.scrollHeight + 64 + 'px';
+    });
+    if (textarea) setTimeout(() => textarea.focus(), 420);
+  }
+
+  function closeCard() {
+    isOpen = false;
+    card.style.maxHeight = '0';
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(8px)';
+    if (textarea) textarea.value = '';
+    if (hint)     hint.style.opacity = '0';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    if (isOpen) { closeCard(); } else { openCard(); }
+  });
+
+  // Send button — open WhatsApp with typed text only
+  if (sendBtn && textarea) {
+    let hintTimer = null;
+
+    sendBtn.addEventListener('click', () => {
+      const message = textarea.value.trim();
+
+      if (!message) {
+        if (hint) {
+          hint.style.opacity = '1';
+          clearTimeout(hintTimer);
+          hintTimer = setTimeout(() => { hint.style.opacity = '0'; }, 3000);
+        }
+        textarea.focus();
+        return;
+      }
+
+      if (hint) hint.style.opacity = '0';
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/918105956981?text=${encoded}`, '_blank');
+    });
+
+    textarea.addEventListener('input', () => {
+      if (hint) hint.style.opacity = '0';
+    });
+  }
+}
+
+// Initialize Desktop Custom Request Modal
+function initDesktopCustomRequest() {
+  const trigger  = document.getElementById('desktop-custom-request-trigger');
+  const overlay  = document.getElementById('desktop-req-modal-overlay');
+  const card     = document.getElementById('desktop-req-modal-card');
+  const closeBtn = document.getElementById('desktop-req-modal-close');
+  const textarea = document.getElementById('desktop-req-textarea');
+  const sendBtn  = document.getElementById('desktop-req-send');
+
+  if (!trigger || !overlay || !card || !textarea || !sendBtn) return;
+
+  function openModal() {
+    overlay.classList.remove('hidden');
+    void overlay.offsetWidth; // Reflow
+    overlay.style.opacity = '1';
+    overlay.classList.remove('pointer-events-none');
+    
+    card.style.opacity = '1';
+    card.style.transform = 'scale(1)';
+    
+    setTimeout(() => textarea.focus(), 150);
+  }
+
+  function closeModal() {
+    overlay.style.opacity = '0';
+    overlay.classList.add('pointer-events-none');
+    
+    card.style.opacity = '0';
+    card.style.transform = 'scale(0.96)';
+    
+    setTimeout(() => {
+      if (overlay.style.opacity === '0') {
+        overlay.classList.add('hidden');
+        textarea.value = '';
+        textarea.style.height = 'auto';
+        sendBtn.disabled = true;
+      }
+    }, 200);
+  }
+
+  // Open & Close click hooks
+  trigger.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // Close on clicking overlay backdrop
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Auto-expand textarea & toggle button disabled status
+  textarea.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+
+    const hasText = this.value.trim().length > 0;
+    sendBtn.disabled = !hasText;
+  });
+
+  // Send WhatsApp request
+  sendBtn.addEventListener('click', () => {
+    const text = textarea.value.trim();
+    if (!text) return;
+
+    const encoded = encodeURIComponent(text);
+    const waUrl = `https://wa.me/918105956981?text=${encoded}`;
+
+    window.open(waUrl, '_blank');
+    closeModal();
+  });
+}
+
 // Initialize slideshow logic and scroll listeners
 function init() {
   if (slides.length > 0) {
@@ -413,6 +558,8 @@ function init() {
   initMobileFooter();
   initCollectionsHover();
   initMobileNav();
+  initCustomRequest();
+  initDesktopCustomRequest();
 }
 
 // Start once DOM is fully evaluated

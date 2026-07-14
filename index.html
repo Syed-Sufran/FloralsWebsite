@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="h-full">
 
 <head>
@@ -23,49 +23,58 @@
   class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB]">
 
   <!-- Floating Hamburger Icon -->
-  <button id="mobile-hamburger" class="fixed top-6 right-6 z-[90] bg-transparent border-0 text-[#F6F0EB] hover:text-[#C9A84C] transition-colors duration-300 focus:outline-none cursor-pointer p-2 flex items-center justify-center" aria-label="Open navigation menu">
+  <button id="mobile-hamburger"
+    class="fixed top-6 right-6 z-[90] bg-transparent border-0 text-[#F6F0EB] hover:text-[#C9A84C] transition-colors duration-300 focus:outline-none cursor-pointer p-2 flex items-center justify-center"
+    aria-label="Open navigation menu">
     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16" />
     </svg>
   </button>
 
   <!-- Mobile Navigation Overlay & Panel -->
-  <div id="mobile-nav-overlay" class="fixed inset-0 bg-black/0 z-[100] transition-opacity duration-[400ms] ease-in-out hidden"></div>
-  <div id="mobile-nav-panel" class="fixed top-0 right-0 h-screen w-[88vw] max-w-[88vw] bg-white text-[#1A1420] z-[101] translate-x-full transition-transform duration-[400ms] ease-in-out flex flex-col hidden select-none">
+  <div id="mobile-nav-overlay"
+    class="fixed inset-0 bg-black/0 z-[100] transition-opacity duration-[400ms] ease-in-out hidden"></div>
+  <div id="mobile-nav-panel"
+    class="fixed top-0 right-0 h-screen w-[88vw] max-w-[88vw] bg-white text-[#1A1420] z-[101] translate-x-full transition-transform duration-[400ms] ease-in-out flex flex-col hidden select-none">
     <!-- Header -->
     <div class="px-8 pt-16 pb-6 flex items-center justify-between">
       <span class="font-display font-light tracking-[0.2em] text-lg text-[#1A1420] uppercase select-none">
         <span class="font-brittany normal-case tracking-normal text-3xl text-[#1A1420]">Zoya's</span> Florals
       </span>
-      <button id="mobile-nav-close" class="text-[#1A1420] hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer focus:outline-none">
+      <button id="mobile-nav-close"
+        class="text-[#1A1420] hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
-    
+
     <!-- Thin Divider -->
     <div class="mx-8 border-b border-[#1A1420]/10"></div>
-    
+
     <!-- Navigation Links -->
     <nav class="flex-1 px-8 pt-16 flex flex-col justify-start gap-8">
       <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
-        <a href="/collections/butterfly/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+        <a href="/collections/butterfly/"
+          class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
           Butterfly Collection
         </a>
       </div>
       <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
-        <a href="/collections/themed/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+        <a href="/collections/themed/"
+          class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
           Themed Collection
         </a>
       </div>
       <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
-        <a href="/collections/curated-gifts/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+        <a href="/collections/curated-gifts/"
+          class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
           Curated Gifts
         </a>
       </div>
       <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
-        <a href="/collections/chocolate-bouquet/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+        <a href="/collections/chocolate-bouquet/"
+          class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
           Chocolate Bouquets
         </a>
       </div>
@@ -340,15 +349,46 @@
           <p class="text-[#1A1420] text-xs leading-relaxed font-light mb-8 max-w-[240px] mx-auto">
             Share your vision and we'll handcraft a one of a kind floral experience around it.
           </p>
-          <a href="https://wa.me/message/placeholder"
-            class="inline-block bg-[#1A1420] hover:bg-[#D4B96A] text-[#C9A84C] text-[10px] font-semibold tracking-[0.15em] uppercase px-7 py-3 rounded-full transition-colors duration-300 pointer-events-auto mt-16">
+          <button id="custom-request-scroll-btn"
+            class="inline-block bg-[#1A1420] hover:bg-[#D4B96A] text-[#C9A84C] text-[10px] font-semibold tracking-[0.15em] uppercase px-7 py-3 rounded-full transition-colors duration-300 pointer-events-auto mt-16 cursor-pointer border-0 focus:outline-none">
             Make Your Custom Request
-          </a>
+          </button>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- ════════════════════════════════ INLINE REQUEST CARD (Mobile) ═══ -->
+  <div id="custom-request-section" class="md:hidden bg-[#1A1420] px-5">
+    <!-- The animated wrapper — starts collapsed -->
+    <div id="custom-request-card"
+      style="max-height:0;opacity:0;transform:translateY(8px);overflow:hidden;transition:max-height 420ms ease-in-out,opacity 420ms ease-in-out,transform 420ms ease-in-out;">
+
+      <!-- Frosted editorial card -->
+      <div class="custom-request-card-inner">
+
+        <textarea id="custom-request-textarea" rows="6"
+          placeholder="Describe your vibe, and we will handcraft a one of a kind floral experience around it."
+          class="custom-request-textarea w-full"></textarea>
+
+        <!-- Empty hint -->
+        <p id="custom-request-hint" style="opacity:0;transition:opacity 300ms ease;"
+          class="text-[#C9A84C]/60 text-[11px] font-light tracking-wide mt-2 text-center">
+          Please write something first.
+        </p>
+
+        <!-- Send -->
+        <div class="mt-6 flex justify-center">
+          <button id="custom-request-send"
+            class="custom-request-send-btn text-[#F2EAE4]/60 text-[11px] font-light tracking-[0.22em] uppercase bg-transparent border-0 cursor-pointer focus:outline-none">
+            Send Request &rarr;
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ════════════════════════════════ DESKTOP COLLECTIONS ═══ -->
   <section id="collections-section" class="relative hidden md:block bg-[#1A1420] py-32 px-12 lg:px-24 overflow-hidden">
@@ -375,10 +415,9 @@
         <!-- Butterfly Bouquet (Largest - Primary Focus) -->
         <div
           class="absolute top-[-17%] right-[4%] xl:right-[8%] w-[44%] max-w-[650px] min-w-[260px] flex flex-col items-center -rotate-12">
-          <img src="/images/butterfly_fixed.png" alt="Butterfly Bouquet Collection"
+          <img id="collection-img-butterfly" src="/images/butterfly_fixed.png" alt="Butterfly Bouquet Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
-            onclick="window.location.href='/collections/butterfly/'"
-            data-title="Butterfly Light-Up Collection"
+            onclick="window.location.href='/collections/butterfly/'" data-title="Butterfly Light-Up Collection"
             data-body="Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry." />
           <div
             class="collection-shadow absolute bottom-[-14px] left-1/2 -translate-x-1/2 w-[35%] h-[12px] bg-black/45 rounded-full blur-[8px] opacity-50 transition-all duration-400 ease-out">
@@ -407,10 +446,9 @@
         <!-- BMW Bouquet (Smallest) -->
         <div
           class="absolute top-[-20%] left-[0%] xl:left-[0%] w-[34%] max-w-[450px] min-w-[140px] rotate-12 flex flex-col items-center">
-          <img src="/images/BMW.png" alt="BMW Bouquet Collection"
+          <img id="collection-img-bmw" src="/images/BMW.png" alt="BMW Bouquet Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
-            onclick="window.location.href='/collections/themed/'"
-            data-title="Theme Bouquets"
+            onclick="window.location.href='/collections/themed/'" data-title="Theme Bouquets"
             data-body="Personalized handcrafted bouquets inspired by passions, memories and meaningful moments." />
           <div
             class="collection-shadow absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-[50%] h-[10px] bg-black/45 rounded-full blur-[6px] opacity-50 transition-all duration-400 ease-out">
@@ -436,10 +474,9 @@
         <!-- Gift Box Bouquet (Medium) -->
         <div
           class="absolute top-[18%] right-[3%] xl:right-[1%] w-[30%] max-w-[350px] min-w-[180px] flex flex-col items-center">
-          <img src="/images/Giftbox.png" alt="Gift Box Collection"
+          <img id="collection-img-giftbox" src="/images/Giftbox.png" alt="Gift Box Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
-            onclick="window.location.href='/collections/curated-gifts/'"
-            data-title="Curated Gift Editions"
+            onclick="window.location.href='/collections/curated-gifts/'" data-title="Curated Gift Editions"
             data-body="Bouquets built around what they'll actually use — makeup, keepsakes, and small indulgences." />
           <div
             class="collection-shadow absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-[65%] h-[10px] bg-black/45 rounded-full blur-[7px] opacity-50 transition-all duration-400 ease-out">
@@ -465,10 +502,9 @@
         <!-- Chocolate Bouquet (Slightly larger than Gift Box) -->
         <div
           class="absolute top-[37%] left-[30%] w-[30%] max-w-[350px] min-w-[210px] rotate-6 flex flex-col items-center">
-          <img src="/images/chocolate.png" alt="Chocolate Bouquet Collection"
+          <img id="collection-img-chocolate" src="/images/chocolate.png" alt="Chocolate Bouquet Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
-            onclick="window.location.href='/collections/chocolate-bouquet/'"
-            data-title="Chocolate Bouquets"
+            onclick="window.location.href='/collections/chocolate-bouquet/'" data-title="Chocolate Bouquets"
             data-body="Gourmet chocolates arranged like blooms, wrapped for the moments that call for something sweeter." />
           <div
             class="collection-shadow absolute bottom-[-14px] left-1/2 -translate-x-1/2 w-[60%] h-[12px] bg-black/45 rounded-full blur-[8px] opacity-50 transition-all duration-400 ease-out">
@@ -494,23 +530,36 @@
       </div>
 
     </div>
+
+    <!-- Custom Request Desktop Trigger -->
+    <div class="absolute bottom-24 right-[57px] lg:right-[105px] z-20 hidden md:block">
+      <button id="desktop-custom-request-trigger"
+        class="border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#1A1420] px-8 py-3.5 rounded-full text-[11px] lg:text-xs font-sans font-light tracking-[0.2em] uppercase cursor-pointer bg-transparent focus:outline-none transition-all duration-300">
+        Get Your Customised Bouquet &rarr;
+      </button>
+    </div>
   </section>
 
   <!-- ══════════════════════════════════ COLLECTIONS DIRECTORY ═══ -->
   <section id="collections-directory" class="relative bg-[#1A1420] py-16 px-8 text-center border-t border-white/[0.05]">
     <div class="max-w-md mx-auto">
-      <h4 class="font-display font-light text-[#F2EAE4] tracking-[0.2em] uppercase text-sm mb-6">Collections Directory</h4>
+      <h4 class="font-display font-light text-[#F2EAE4] tracking-[0.2em] uppercase text-sm mb-6">Collections Directory
+      </h4>
       <div class="flex flex-col gap-4">
-        <a href="/collections/butterfly/" class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
+        <a href="/collections/butterfly/"
+          class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
           Butterfly Light-Up Collection &rarr;
         </a>
-        <a href="/collections/themed/" class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
+        <a href="/collections/themed/"
+          class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
           Theme Bouquets &rarr;
         </a>
-        <a href="/collections/chocolate-bouquet/" class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
+        <a href="/collections/chocolate-bouquet/"
+          class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
           Chocolate Bouquets &rarr;
         </a>
-        <a href="/collections/curated-gifts/" class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
+        <a href="/collections/curated-gifts/"
+          class="inline-block text-[#C9A84C] hover:text-[#F2EAE4] text-[13px] font-sans font-light tracking-wider transition-colors duration-300">
           Curated Gift Editions &rarr;
         </a>
       </div>
@@ -650,8 +699,11 @@
 
           <!-- Back to Top & Copyright -->
           <div class="flex flex-col items-center gap-4 mt-6">
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-8 h-8 rounded-full border border-white/20 hover:border-[#C9A84C] hover:text-[#C9A84C] text-[#CDBFC7]/60 flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none" aria-label="Scroll to top">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+              class="w-8 h-8 rounded-full border border-white/20 hover:border-[#C9A84C] hover:text-[#C9A84C] text-[#CDBFC7]/60 flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none"
+              aria-label="Scroll to top">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-3.5 h-3.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
               </svg>
             </button>
@@ -756,8 +808,11 @@
                 Ships Pan-India
               </p>
               <!-- Back to Top Button -->
-              <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-8 h-8 rounded-full border border-white/20 hover:border-[#C9A84C] hover:text-[#C9A84C] text-[#CDBFC7]/60 flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none" aria-label="Scroll to top">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5">
+              <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="w-8 h-8 rounded-full border border-white/20 hover:border-[#C9A84C] hover:text-[#C9A84C] text-[#CDBFC7]/60 flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none"
+                aria-label="Scroll to top">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-3.5 h-3.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                 </svg>
               </button>
@@ -769,6 +824,42 @@
     </div>
 
   </footer>
+
+  <!-- ════════════════════════════════ CUSTOM REQUEST MODAL (Desktop) ═══ -->
+  <div id="desktop-req-modal-overlay"
+    class="fixed inset-0 z-[200] flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-200 ease-out hidden">
+    <!-- Modal Card -->
+    <div id="desktop-req-modal-card"
+      class="relative w-full max-w-[480px] bg-[#2A2130] rounded-3xl p-10 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform scale-[0.96] transition-transform duration-200 ease-out">
+      <!-- Close button (✕) -->
+      <button id="desktop-req-modal-close"
+        class="absolute top-6 right-6 text-[#CDBFC7] hover:text-[#F2EAE4] transition-colors duration-200 bg-transparent border-0 cursor-pointer focus:outline-none p-1 text-lg font-light leading-none"
+        aria-label="Close modal">
+        ✕
+      </button>
+
+      <!-- Modal Content -->
+      <div class="flex flex-col gap-6 mt-4">
+        <!-- Minimal Textarea -->
+        <textarea id="desktop-req-textarea" rows="4"
+          placeholder="Share your vision and we'll handcraft a one-of-a-kind floral experience around it."
+          class="w-full bg-transparent border-0 border-b border-white/20 text-[#F6F0EB] placeholder-[#CDBFC7]/40 font-body font-light text-sm p-3 focus:border-[#C9A84C] focus:ring-0 focus:outline-none resize-none transition-colors duration-300 min-h-[100px]"></textarea>
+
+        <!-- Right-aligned Action Bar -->
+        <div class="flex justify-end items-center mt-2">
+          <!-- Small circular send button -->
+          <button id="desktop-req-send" disabled
+            class="w-10 h-10 rounded-full bg-[#C9A84C] text-[#1A1420] flex items-center justify-center border-0 cursor-pointer focus:outline-none transition-all duration-300 opacity-40 hover:scale-105 active:scale-95 disabled:pointer-events-none"
+            aria-label="Send request via WhatsApp">
+            <!-- Arrow / Paper Plane SVG icon -->
+            <svg class="w-4 h-4 transform rotate-45 -translate-x-0.5 translate-y-0.5 fill-current" viewBox="0 0 24 24">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
