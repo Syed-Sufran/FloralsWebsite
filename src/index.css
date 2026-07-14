@@ -303,13 +303,16 @@
   transform: translate(-50%, 30%) rotate(-6deg) !important;
 }
 
-/* Rounded corners for media on the Butterfly Collection subpage */
+/* Rounded corners for media on the Butterfly Collection and Theme Bouquets subpages */
 .butterfly-page img,
-.butterfly-page video {
+.butterfly-page video,
+.themed-page img,
+.themed-page video {
   border-radius: 10px !important;
 }
 
-.butterfly-page .columns-2 > div > div {
+.butterfly-page .columns-2 > div > div,
+.themed-page .columns-2 > div > div {
   border-radius: 10px !important;
   overflow: hidden !important;
 }

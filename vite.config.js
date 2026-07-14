@@ -8,7 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        butterfly: 'collections/butterfly/index.html'
+        butterfly: 'collections/butterfly/index.html',
+        themed: 'collections/themed/index.html'
       }
     }
   }
