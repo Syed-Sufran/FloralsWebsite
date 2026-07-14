@@ -3,19 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Brittany Signature";
-  src:
-    url("/fonts/BrittanySignature-Regular.otf") format("opentype"),
-    url("/fonts/BrittanySignature-Regular.ttf") format("truetype"),
-    url("/fonts/BrittanySignature.otf") format("opentype"),
-    url("/fonts/BrittanySignature.ttf") format("truetype");
+  font-family: "Allura";
+  src: url("/fonts/Allura-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-.font-brittany {
-  font-family: "Brittany Signature", cursive !important;
+.font-allura {
+  font-family: "Allura", cursive;
 }
 
 @layer base {
@@ -271,6 +267,7 @@
 .collection-panel-butterfly {
   transform: translate(-50%, calc(30% + 20px)) rotate(12deg) !important;
 }
+
 .collection-panel-butterfly.is-active {
   opacity: 1 !important;
   transform: translate(-50%, 30%) rotate(12deg) !important;
@@ -280,6 +277,7 @@
 .collection-panel-bmw {
   transform: translate(-50%, calc(30% + 20px)) rotate(-12deg) !important;
 }
+
 .collection-panel-bmw.is-active {
   opacity: 1 !important;
   transform: translate(-50%, 30%) rotate(-12deg) !important;
@@ -289,6 +287,7 @@
 .collection-panel-giftbox {
   transform: translate(-50%, calc(30% + 20px)) !important;
 }
+
 .collection-panel-giftbox.is-active {
   opacity: 1 !important;
   transform: translate(-50%, 30%) !important;
@@ -298,6 +297,7 @@
 .collection-panel-chocolate {
   transform: translate(-50%, calc(30% + 20px)) rotate(-6deg) !important;
 }
+
 .collection-panel-chocolate.is-active {
   opacity: 1 !important;
   transform: translate(-50%, 30%) rotate(-6deg) !important;
@@ -311,8 +311,8 @@
   border-radius: 10px !important;
 }
 
-.butterfly-page .break-inside-avoid > div:first-child,
-.themed-page .break-inside-avoid > div:first-child {
+.butterfly-page .break-inside-avoid>div:first-child,
+.themed-page .break-inside-avoid>div:first-child {
   position: relative !important;
   border-radius: 10px !important;
   overflow: hidden !important;
@@ -320,13 +320,14 @@
 
 /* ═══════════════════════════ DESKTOP LAYOUT (min-width: 1024px) ═══ */
 @media (min-width: 1024px) {
+
   .themed-page main,
   .butterfly-page main {
     max-width: 1200px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  
+
   .themed-page .columns-2 {
     column-count: 3 !important;
     column-gap: 16px !important;
@@ -336,6 +337,7 @@
   .butterfly-page main {
     max-width: 800px !important;
   }
+
   .butterfly-page .columns-2 {
     column-count: 2 !important;
     column-gap: 16px !important;
@@ -360,7 +362,7 @@
   }
 
   /* Overlay Header container - absolute position close button */
-  .fixed.z-50[id^="detail-overlay-"] > div:first-child {
+  .fixed.z-50[id^="detail-overlay-"]>div:first-child {
     position: absolute !important;
     top: 40px !important;
     left: 40px !important;
@@ -372,7 +374,7 @@
   }
 
   /* Left-side image gallery occupying full width except CTA sidebar */
-  .fixed.z-50[id^="detail-overlay-"] > div:nth-child(2) {
+  .fixed.z-50[id^="detail-overlay-"]>div:nth-child(2) {
     flex: 1 !important;
     height: 100vh !important;
     max-width: none !important;
@@ -386,7 +388,7 @@
     height: 100vh !important;
   }
 
-  .fixed.z-50[id^="detail-overlay-"] div[id^="carousel-track-"] > div {
+  .fixed.z-50[id^="detail-overlay-"] div[id^="carousel-track-"]>div {
     height: 100vh !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -399,7 +401,8 @@
     width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
-    border-radius: 0 !important; /* full-bleed clean look in overlay */
+    border-radius: 0 !important;
+    /* full-bleed clean look in overlay */
   }
 
   /* Custom override for heights of containers inside track */
@@ -419,7 +422,7 @@
   }
 
   /* Right-side CTA sidebar */
-  .fixed.z-50[id^="detail-overlay-"] > div:last-child {
+  .fixed.z-50[id^="detail-overlay-"]>div:last-child {
     width: 400px !important;
     max-width: 400px !important;
     height: 100vh !important;
@@ -436,7 +439,7 @@
   }
 
   /* Styled buttons inside CTA sidebar */
-  .fixed.z-50[id^="detail-overlay-"] > div:last-child a {
+  .fixed.z-50[id^="detail-overlay-"]>div:last-child a {
     font-size: 13px !important;
     letter-spacing: 0.2em !important;
     padding: 14px 28px !important;
@@ -448,7 +451,7 @@
     transition: all 300ms ease !important;
   }
 
-  .fixed.z-50[id^="detail-overlay-"] > div:last-child a:hover {
+  .fixed.z-50[id^="detail-overlay-"]>div:last-child a:hover {
     border-color: #F2EAE4 !important;
     background-color: rgba(242, 234, 228, 0.08) !important;
     color: #F2EAE4 !important;
@@ -458,15 +461,16 @@
 
 /* ═════════════════════ DESKTOP HOVER TRANSITIONS (hover: hover) ═══ */
 @media (hover: hover) and (pointer: fine) {
-  .themed-page .break-inside-avoid > div:first-child,
-  .butterfly-page .break-inside-avoid > div:first-child {
+
+  .themed-page .break-inside-avoid>div:first-child,
+  .butterfly-page .break-inside-avoid>div:first-child {
     transition: transform 300ms ease-out, filter 300ms ease-out !important;
     transform-origin: center center;
     will-change: transform, filter;
   }
 
-  .themed-page .break-inside-avoid:hover > div:first-child,
-  .butterfly-page .break-inside-avoid:hover > div:first-child {
+  .themed-page .break-inside-avoid:hover>div:first-child,
+  .butterfly-page .break-inside-avoid:hover>div:first-child {
     transform: scale(1.03) !important;
     filter: brightness(1.05) !important;
   }
@@ -492,12 +496,13 @@
   }
 
   .hover-media-wrap.is-visible {
-    opacity: 0.95 !important; /* dimmed as well */
+    opacity: 0.95 !important;
+    /* dimmed as well */
   }
 
   /* Click Here overlay text pill */
-  .themed-page .break-inside-avoid > div:first-child::after,
-  .butterfly-page .break-inside-avoid > div:first-child::after {
+  .themed-page .break-inside-avoid>div:first-child::after,
+  .butterfly-page .break-inside-avoid>div:first-child::after {
     content: 'CLICK HERE';
     position: absolute;
     top: 50%;
@@ -507,7 +512,7 @@
     z-index: 30;
     pointer-events: none;
     transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms cubic-bezier(0.16, 1, 0.3, 1);
-    
+
     font-family: 'Manrope', sans-serif;
     font-size: 10px;
     font-weight: 300;
@@ -523,9 +528,10 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
-  .themed-page .break-inside-avoid:hover > div:first-child::after,
-  .butterfly-page .break-inside-avoid:hover > div:first-child::after {
-    opacity: 0.80; /* a little more translucent than the video */
+  .themed-page .break-inside-avoid:hover>div:first-child::after,
+  .butterfly-page .break-inside-avoid:hover>div:first-child::after {
+    opacity: 0.80;
+    /* a little more translucent than the video */
     transform: translate(-50%, -50%);
   }
 }
@@ -566,6 +572,7 @@
     display: block;
     transition: transform 250ms ease-out, opacity 250ms ease-out;
   }
+
   .mobile-nav-item a:active {
     opacity: 0.65;
     transform: translateX(5px);
@@ -649,7 +656,8 @@
   line-height: 1.6 !important;
   color: #F6F0EB !important;
   transition: border-bottom-color 300ms ease, box-shadow 300ms ease !important;
-  overflow-y: hidden; /* Hide scrollbar for auto-expanding textarea */
+  overflow-y: hidden;
+  /* Hide scrollbar for auto-expanding textarea */
 }
 
 #desktop-req-textarea::placeholder {
@@ -701,18 +709,23 @@
   0% {
     transform: scale(1);
   }
+
   6% {
     transform: scale(1.06);
   }
+
   12% {
     transform: scale(1);
   }
+
   18% {
     transform: scale(1.06);
   }
+
   24% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(1);
   }
@@ -748,14 +761,17 @@
     animation: breath-bmw 4.5s infinite ease-in-out;
     animation-delay: 0.3s;
   }
+
   #collection-img-butterfly {
     animation: breath-butterfly 5.2s infinite ease-in-out;
     animation-delay: 0.6s;
   }
+
   #collection-img-giftbox {
     animation: breath-giftbox 4.8s infinite ease-in-out;
     animation-delay: 0.1s;
   }
+
   #collection-img-chocolate {
     animation: breath-chocolate 5.8s infinite ease-in-out;
     animation-delay: 0.4s;
@@ -772,36 +788,48 @@
 }
 
 @keyframes breath-bmw {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(var(--breath-x-bmw), var(--breath-y-bmw));
   }
 }
 
 @keyframes breath-butterfly {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(var(--breath-x-butterfly), var(--breath-y-butterfly));
   }
 }
 
 @keyframes breath-giftbox {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(var(--breath-x-giftbox), var(--breath-y-giftbox));
   }
 }
 
 @keyframes breath-chocolate {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(var(--breath-x-chocolate), var(--breath-y-chocolate));
   }
@@ -809,6 +837,7 @@
 
 /* Mobile Page Background & Text Styling for all Collection Subpages (except Home Page) */
 @media (max-width: 767px) {
+
   html:has(body.butterfly-page),
   html:has(body.themed-page) {
     background-color: transparent !important;
@@ -857,4 +886,4 @@ html.loaded body {
   opacity: 1;
   visibility: visible;
   transition: opacity .25s ease;
-}
+}
