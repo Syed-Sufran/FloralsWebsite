@@ -150,6 +150,130 @@ function setupOverlay(index) {
   }
 }
 
+// Gated hover preview initialization for desktop mouse users
+function initHoverPreviews() {
+  const isDesktopMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!isDesktopMouse) return;
+
+  const cards = document.querySelectorAll('.break-inside-avoid');
+  cards.forEach(card => {
+    const videoUrl = card.getAttribute('data-video');
+    const imagesAttr = card.getAttribute('data-images');
+    const hoverMedia = card.querySelector('.hover-media-wrap');
+    if (!hoverMedia) return;
+
+    let hoverTimeout = null;
+    let fallbackTimeout = null;
+    let fadeTimeout = null;
+    let cycleInterval = null;
+    let activeVideo = null;
+    let cycleImages = [];
+    let cycleIndex = 0;
+
+    if (imagesAttr) {
+      cycleImages = imagesAttr.split(',').filter(src => src.trim() !== '');
+    }
+
+    function cleanup() {
+      if (hoverTimeout) clearTimeout(hoverTimeout);
+      if (fallbackTimeout) clearTimeout(fallbackTimeout);
+      if (fadeTimeout) clearTimeout(fadeTimeout);
+      if (cycleInterval) clearInterval(cycleInterval);
+
+      hoverMedia.classList.remove('is-visible');
+      hoverMedia.style.opacity = '0';
+
+      if (activeVideo) {
+        activeVideo.pause();
+        activeVideo.removeAttribute('src');
+        activeVideo.load();
+        activeVideo.remove();
+        activeVideo = null;
+      }
+      hoverMedia.innerHTML = '';
+    }
+
+    function startStaticCycling() {
+      if (cycleInterval) clearInterval(cycleInterval);
+      if (cycleImages.length <= 1) return;
+
+      hoverMedia.innerHTML = '';
+      const imgElements = cycleImages.map((src, idx) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = `absolute inset-0 w-full h-full object-cover transition-opacity duration-[250ms] ease-in-out`;
+        img.style.opacity = idx === 0 ? '1' : '0';
+        hoverMedia.appendChild(img);
+        return img;
+      });
+
+      hoverMedia.classList.add('is-visible');
+
+      cycleIndex = 0;
+      cycleInterval = setInterval(() => {
+        const prevIdx = cycleIndex;
+        cycleIndex = (cycleIndex + 1) % imgElements.length;
+        imgElements[prevIdx].style.opacity = '0';
+        imgElements[cycleIndex].style.opacity = '1';
+      }, 1450);
+    }
+
+    card.addEventListener('mouseenter', () => {
+      cleanup();
+
+      if (videoUrl) {
+        const video = document.createElement('video');
+        video.src = videoUrl;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.className = 'w-full h-full object-cover block';
+        hoverMedia.appendChild(video);
+        activeVideo = video;
+
+        let canPlayFired = false;
+
+        video.addEventListener('canplay', () => {
+          if (canPlayFired) return;
+          canPlayFired = true;
+          if (fallbackTimeout) clearTimeout(fallbackTimeout);
+
+          video.play().then(() => {
+            hoverMedia.classList.add('is-visible');
+          }).catch(err => {
+            console.log('Video play failed:', err);
+            startStaticCycling();
+          });
+        });
+
+        video.load();
+
+        fallbackTimeout = setTimeout(() => {
+          if (!canPlayFired) {
+            console.log('Video load timed out, falling back to images');
+            if (activeVideo) {
+              activeVideo.pause();
+              activeVideo.removeAttribute('src');
+              activeVideo.load();
+              activeVideo.remove();
+              activeVideo = null;
+            }
+            hoverMedia.innerHTML = '';
+            startStaticCycling();
+          }
+        }, 800);
+
+      } else {
+        startStaticCycling();
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      cleanup();
+    });
+  });
+}
+
 // Bind clicks on grid items to launch correct overlay
 function init() {
   // Initialize dynamic controls for indices 0, 1, 2, 3, and 4
@@ -167,6 +291,8 @@ function init() {
   if (card2) card2.addEventListener('click', () => window['openOverlay-2']());
   if (card3) card3.addEventListener('click', () => window['openOverlay-3']());
   if (card4) card4.addEventListener('click', () => window['openOverlay-4']());
+
+  initHoverPreviews();
 }
 
 // Start controllers

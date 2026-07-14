@@ -311,8 +311,65 @@
   border-radius: 10px !important;
 }
 
-.butterfly-page .columns-2 > div > div,
-.themed-page .columns-2 > div > div {
+.butterfly-page .break-inside-avoid > div:first-child,
+.themed-page .break-inside-avoid > div:first-child {
+  position: relative !important;
   border-radius: 10px !important;
   overflow: hidden !important;
+}
+
+/* ═══════════════════════════ DESKTOP LAYOUT (min-width: 1024px) ═══ */
+@media (min-width: 1024px) {
+  .themed-page main,
+  .butterfly-page main {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .themed-page .columns-2,
+  .butterfly-page .columns-2 {
+    column-count: 3 !important;
+    column-gap: 16px !important;
+  }
+}
+
+/* ═════════════════════ DESKTOP HOVER TRANSITIONS (hover: hover) ═══ */
+@media (hover: hover) and (pointer: fine) {
+  .themed-page .break-inside-avoid > div:first-child,
+  .butterfly-page .break-inside-avoid > div:first-child {
+    transition: transform 300ms ease-out, filter 300ms ease-out !important;
+    transform-origin: center center;
+    will-change: transform, filter;
+  }
+
+  .themed-page .break-inside-avoid:hover > div:first-child,
+  .butterfly-page .break-inside-avoid:hover > div:first-child {
+    transform: scale(1.03) !important;
+    filter: brightness(1.05) !important;
+  }
+}
+
+/* Hover media container overlay styling */
+.hover-media-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+.hover-media-wrap.is-visible {
+  opacity: 1 !important;
+}
+
+.hover-media-wrap img,
+.hover-media-wrap video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 10px !important;
 }
