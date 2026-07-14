@@ -22,6 +22,56 @@
 <body
   class="h-full bg-[#1A1420] text-[#F6F0EB] font-body overflow-x-hidden selection:bg-[#D4457C] selection:text-[#F6F0EB]">
 
+  <!-- Floating Hamburger Icon -->
+  <button id="mobile-hamburger" class="fixed top-6 right-6 z-[90] bg-transparent border-0 text-[#F6F0EB] hover:text-[#C9A84C] transition-colors duration-300 focus:outline-none cursor-pointer p-2 flex items-center justify-center" aria-label="Open navigation menu">
+    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16" />
+    </svg>
+  </button>
+
+  <!-- Mobile Navigation Overlay & Panel -->
+  <div id="mobile-nav-overlay" class="fixed inset-0 bg-black/0 z-[100] transition-opacity duration-[400ms] ease-in-out hidden"></div>
+  <div id="mobile-nav-panel" class="fixed top-0 right-0 h-screen w-[88vw] max-w-[88vw] bg-white text-[#1A1420] z-[101] translate-x-full transition-transform duration-[400ms] ease-in-out flex flex-col hidden select-none">
+    <!-- Header -->
+    <div class="px-8 pt-16 pb-6 flex items-center justify-between">
+      <span class="font-display font-light tracking-[0.2em] text-lg text-[#1A1420] uppercase select-none">
+        <span class="font-brittany normal-case tracking-normal text-3xl text-[#1A1420]">Zoya's</span> Florals
+      </span>
+      <button id="mobile-nav-close" class="text-[#1A1420] hover:text-[#C9A84C] transition-colors duration-200 cursor-pointer focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Thin Divider -->
+    <div class="mx-8 border-b border-[#1A1420]/10"></div>
+    
+    <!-- Navigation Links -->
+    <nav class="flex-1 px-8 pt-16 flex flex-col justify-start gap-8">
+      <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
+        <a href="/collections/butterfly/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+          Butterfly Collection
+        </a>
+      </div>
+      <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
+        <a href="/collections/themed/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+          Themed Collection
+        </a>
+      </div>
+      <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
+        <a href="/collections/curated-gifts/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+          Curated Gifts
+        </a>
+      </div>
+      <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
+        <a href="/collections/chocolate-bouquet/" class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+          Chocolate Bouquets
+        </a>
+      </div>
+    </nav>
+  </div>
+
   <!-- ═══════════════════════════════════════════════ HERO ═══ -->
   <section id="hero-container"
     class="relative w-full h-screen bg-[#1A1420] overflow-hidden flex flex-col md:flex-row select-none"
@@ -598,10 +648,17 @@
 
           </div>
 
-          <!-- Copyright -->
-          <p class="text-center text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em]">
-            &copy; 2025 Zoya's Florals &middot; All rights reserved
-          </p>
+          <!-- Back to Top & Copyright -->
+          <div class="flex flex-col items-center gap-4 mt-6">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-8 h-8 rounded-full border border-white/20 hover:border-[#C9A84C] hover:text-[#C9A84C] text-[#CDBFC7]/60 flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none" aria-label="Scroll to top">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+              </svg>
+            </button>
+            <p class="text-center text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em]">
+              &copy; 2025 Zoya's Florals &middot; All rights reserved
+            </p>
+          </div>
         </div>
 
         <!-- Desktop / Tablet Layout -->
@@ -694,9 +751,17 @@
             <p class="text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em] uppercase">
               &copy; 2026 Zoya Florals
             </p>
-            <p class="text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em] uppercase">
-              Ships Pan-India
-            </p>
+            <div class="flex items-center gap-6">
+              <p class="text-[#CDBFC7]/40 text-[10px] font-light tracking-[0.2em] uppercase">
+                Ships Pan-India
+              </p>
+              <!-- Back to Top Button -->
+              <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-8 h-8 rounded-full border border-white/20 hover:border-[#C9A84C] hover:text-[#C9A84C] text-[#CDBFC7]/60 flex items-center justify-center transition-all duration-300 cursor-pointer focus:outline-none" aria-label="Scroll to top">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3.5 h-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+              </button>
+            </div>
           </div>
 
         </div>

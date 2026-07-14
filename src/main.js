@@ -340,6 +340,66 @@ function initCollectionsHover() {
   });
 }
 
+// Initialize Mobile Navigation Panel (Mobile Only)
+function initMobileNav() {
+  const hamburger = document.getElementById('mobile-hamburger');
+  const overlay = document.getElementById('mobile-nav-overlay');
+  const panel = document.getElementById('mobile-nav-panel');
+  const closeBtn = document.getElementById('mobile-nav-close');
+  const navLinks = document.querySelectorAll('.mobile-nav-item a');
+
+  if (!hamburger || !overlay || !panel) return;
+
+  function openNav() {
+    overlay.classList.remove('hidden');
+    panel.classList.remove('hidden');
+    
+    // Trigger layout reflow
+    void overlay.offsetWidth;
+    void panel.offsetWidth;
+
+    overlay.classList.remove('opacity-0');
+    overlay.classList.add('opacity-100');
+
+    panel.classList.remove('translate-x-full');
+    panel.classList.add('translate-x-0');
+
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+  }
+
+  function closeNav() {
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+
+    panel.classList.remove('translate-x-0');
+    panel.classList.add('translate-x-full');
+
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+
+    // Hide display after transition completes (400ms)
+    setTimeout(() => {
+      if (panel.classList.contains('translate-x-full')) {
+        overlay.classList.add('hidden');
+        panel.classList.add('hidden');
+      }
+    }, 400);
+  }
+
+  hamburger.addEventListener('click', openNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  overlay.addEventListener('click', closeNav);
+  navLinks.forEach(link => link.addEventListener('click', closeNav));
+
+  // ESC key to close navigation menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !panel.classList.contains('translate-x-full')) {
+      closeNav();
+    }
+  });
+}
+
 // Initialize slideshow logic and scroll listeners
 function init() {
   if (slides.length > 0) {
@@ -352,6 +412,7 @@ function init() {
   initScrollAnimations();
   initMobileFooter();
   initCollectionsHover();
+  initMobileNav();
 }
 
 // Start once DOM is fully evaluated

@@ -3,6 +3,9 @@ import '../../src/index.css';
 // Saved scroll position to restore when overlay is closed
 let savedScrollY = 0;
 
+// Active overlay index tracking for keyboard navigation
+let activeOverlayIndex = null;
+
 // Setup function for each product overlay (index 0, 1, 2)
 function setupOverlay(index) {
   const overlay = document.getElementById(`detail-overlay-${index}`);
@@ -14,9 +17,91 @@ function setupOverlay(index) {
 
   if (!overlay) return;
 
+  // Create and insert navigation buttons dynamically
+  let prevBtn = null;
+  let nextBtn = null;
+  if (carouselTrack) {
+    const trackParent = carouselTrack.parentElement;
+    if (trackParent) {
+      trackParent.classList.add('relative');
+      
+      prevBtn = document.createElement('button');
+      prevBtn.className = `absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 border border-white/10 flex items-center justify-center text-[#F2EAE4] hover:text-white transition-opacity duration-200 opacity-0 pointer-events-none hidden lg:flex select-none`;
+      prevBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      `;
+
+      nextBtn = document.createElement('button');
+      nextBtn.className = `absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 border border-white/10 flex items-center justify-center text-[#F2EAE4] hover:text-white transition-opacity duration-200 opacity-0 pointer-events-none hidden lg:flex select-none`;
+      nextBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      `;
+
+      trackParent.insertBefore(prevBtn, carouselTrack);
+      trackParent.insertBefore(nextBtn, carouselTrack);
+
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const width = carouselTrack.clientWidth;
+        const scrollLeft = carouselTrack.scrollLeft;
+        const activeIdx = Math.round(scrollLeft / width);
+        if (activeIdx > 0) {
+          carouselTrack.scrollTo({
+            left: (activeIdx - 1) * width,
+            behavior: 'smooth'
+          });
+        }
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const width = carouselTrack.clientWidth;
+        const scrollLeft = carouselTrack.scrollLeft;
+        const activeIdx = Math.round(scrollLeft / width);
+        const totalSlides = carouselTrack.children.length;
+        if (activeIdx < totalSlides - 1) {
+          carouselTrack.scrollTo({
+            left: (activeIdx + 1) * width,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
+  }
+
+  function updateArrowVisibility() {
+    if (!prevBtn || !nextBtn || !carouselTrack) return;
+    const width = carouselTrack.clientWidth;
+    if (!width) return;
+    const scrollLeft = carouselTrack.scrollLeft;
+    const activeIdx = Math.round(scrollLeft / width);
+    const totalSlides = carouselTrack.children.length;
+
+    if (activeIdx === 0) {
+      prevBtn.classList.remove('opacity-100', 'pointer-events-auto');
+      prevBtn.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+      prevBtn.classList.remove('opacity-0', 'pointer-events-none');
+      prevBtn.classList.add('opacity-100', 'pointer-events-auto');
+    }
+
+    if (activeIdx === totalSlides - 1) {
+      nextBtn.classList.remove('opacity-100', 'pointer-events-auto');
+      nextBtn.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+      nextBtn.classList.remove('opacity-0', 'pointer-events-none');
+      nextBtn.classList.add('opacity-100', 'pointer-events-auto');
+    }
+  }
+
   // Open Handler
   window[`openOverlay-${index}`] = function() {
     savedScrollY = window.scrollY;
+    activeOverlayIndex = index;
 
     // Display overlay
     overlay.classList.remove('hidden');
@@ -40,12 +125,18 @@ function setupOverlay(index) {
       video.pause();
       updateMuteUI();
     }
+
+    setTimeout(updateArrowVisibility, 100);
   };
 
   // Close Handler
   function closeOverlay() {
     overlay.classList.remove('opacity-100');
     overlay.classList.add('opacity-0');
+
+    if (activeOverlayIndex === index) {
+      activeOverlayIndex = null;
+    }
 
     setTimeout(() => {
       overlay.classList.add('hidden');
@@ -90,6 +181,8 @@ function setupOverlay(index) {
           video.pause();
         }
       }
+
+      updateArrowVisibility();
     });
   }
 
@@ -269,3 +362,43 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+
+// Keyboard Navigation (ESC to go back/close, arrows to slide)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (activeOverlayIndex !== null) {
+      const closeBtn = document.getElementById(`close-overlay-${activeOverlayIndex}`);
+      if (closeBtn) closeBtn.click();
+    } else {
+      window.location.href = '/';
+    }
+  } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+    if (activeOverlayIndex !== null) {
+      const carouselTrack = document.getElementById(`carousel-track-${activeOverlayIndex}`);
+      if (carouselTrack) {
+        const width = carouselTrack.clientWidth;
+        if (!width) return;
+        const scrollLeft = carouselTrack.scrollLeft;
+        const activeIdx = Math.round(scrollLeft / width);
+        const totalSlides = carouselTrack.children.length;
+
+        if (e.key === 'ArrowRight') {
+          if (activeIdx < totalSlides - 1) {
+            carouselTrack.scrollTo({
+              left: (activeIdx + 1) * width,
+              behavior: 'smooth'
+            });
+          }
+        } else if (e.key === 'ArrowLeft') {
+          if (activeIdx > 0) {
+            carouselTrack.scrollTo({
+              left: (activeIdx - 1) * width,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+    }
+  }
+});
+

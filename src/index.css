@@ -327,10 +327,132 @@
     margin-right: auto !important;
   }
   
-  .themed-page .columns-2,
-  .butterfly-page .columns-2 {
+  .themed-page .columns-2 {
     column-count: 3 !important;
     column-gap: 16px !important;
+  }
+
+  /* Butterfly page layout optimization: 2 columns centered at max 800px width */
+  .butterfly-page main {
+    max-width: 800px !important;
+  }
+  .butterfly-page .columns-2 {
+    column-count: 2 !important;
+    column-gap: 16px !important;
+  }
+
+  /* Absolute Top Left Back Link */
+  .themed-page header a[href="/"],
+  .butterfly-page header a[href="/"] {
+    position: absolute !important;
+    top: 40px !important;
+    left: 40px !important;
+    z-index: 40 !important;
+    margin: 0 !important;
+  }
+
+  /* Full-Screen Overlay Redesign for Desktop */
+  .fixed.z-50[id^="detail-overlay-"] {
+    flex-direction: row !important;
+    justify-content: stretch !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+  }
+
+  /* Overlay Header container - absolute position close button */
+  .fixed.z-50[id^="detail-overlay-"] > div:first-child {
+    position: absolute !important;
+    top: 40px !important;
+    left: 40px !important;
+    z-index: 60 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+
+  /* Left-side image gallery occupying full width except CTA sidebar */
+  .fixed.z-50[id^="detail-overlay-"] > div:nth-child(2) {
+    flex: 1 !important;
+    height: 100vh !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #120D16 !important;
+    position: relative !important;
+  }
+
+  .fixed.z-50[id^="detail-overlay-"] div[id^="carousel-track-"] {
+    height: 100vh !important;
+  }
+
+  .fixed.z-50[id^="detail-overlay-"] div[id^="carousel-track-"] > div {
+    height: 100vh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .fixed.z-50[id^="detail-overlay-"] div[id^="carousel-track-"] img,
+  .fixed.z-50[id^="detail-overlay-"] div[id^="carousel-track-"] video {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    border-radius: 0 !important; /* full-bleed clean look in overlay */
+  }
+
+  /* Custom override for heights of containers inside track */
+  .fixed.z-50[id^="detail-overlay-"] .relative.w-full.h-\[52vh\] {
+    height: 100vh !important;
+    width: 100% !important;
+  }
+
+  /* Overlay Dots Indicators centered at the bottom of the left slide container */
+  .fixed.z-50[id^="detail-overlay-"] .flex.justify-center.gap-2 {
+    position: absolute !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-top: 0 !important;
+    z-index: 40 !important;
+  }
+
+  /* Right-side CTA sidebar */
+  .fixed.z-50[id^="detail-overlay-"] > div:last-child {
+    width: 400px !important;
+    max-width: 400px !important;
+    height: 100vh !important;
+    background-color: #221A2B !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 40px !important;
+    margin: 0 !important;
+    z-index: 50 !important;
+  }
+
+  /* Styled buttons inside CTA sidebar */
+  .fixed.z-50[id^="detail-overlay-"] > div:last-child a {
+    font-size: 13px !important;
+    letter-spacing: 0.2em !important;
+    padding: 14px 28px !important;
+    border: 1px solid rgba(201, 168, 76, 0.3) !important;
+    border-radius: 4px !important;
+    background-color: rgba(201, 168, 76, 0.03) !important;
+    width: 100% !important;
+    text-align: center !important;
+    transition: all 300ms ease !important;
+  }
+
+  .fixed.z-50[id^="detail-overlay-"] > div:last-child a:hover {
+    border-color: #F2EAE4 !important;
+    background-color: rgba(242, 234, 228, 0.08) !important;
+    color: #F2EAE4 !important;
+    transform: translateY(-2px) !important;
   }
 }
 
@@ -348,21 +470,64 @@
     transform: scale(1.03) !important;
     filter: brightness(1.05) !important;
   }
-}
 
-/* Hover media container overlay styling */
-.hover-media-wrap {
-  position: absolute !important;
-  inset: 0 !important;
-  opacity: 0;
-  transition: opacity 250ms ease-in-out !important;
-  z-index: 10 !important;
-  pointer-events: none !important;
-  overflow: hidden !important;
-}
+  /* Dim main media contents slightly on hover */
+  .themed-page .break-inside-avoid:hover img,
+  .themed-page .break-inside-avoid:hover video,
+  .butterfly-page .break-inside-avoid:hover img,
+  .butterfly-page .break-inside-avoid:hover video {
+    opacity: 0.95 !important;
+    transition: opacity 300ms ease-in-out !important;
+  }
 
-.hover-media-wrap.is-visible {
-  opacity: 1 !important;
+  /* Hover media container overlay styling */
+  .hover-media-wrap {
+    position: absolute !important;
+    inset: 0 !important;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+  }
+
+  .hover-media-wrap.is-visible {
+    opacity: 0.95 !important; /* dimmed as well */
+  }
+
+  /* Click Here overlay text pill */
+  .themed-page .break-inside-avoid > div:first-child::after,
+  .butterfly-page .break-inside-avoid > div:first-child::after {
+    content: 'CLICK HERE';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    opacity: 0;
+    z-index: 30;
+    pointer-events: none;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    color: #F6F0EB;
+    letter-spacing: 0.25em;
+    background: rgba(26, 20, 32, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(246, 240, 235, 0.15);
+    padding: 8px 18px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .themed-page .break-inside-avoid:hover > div:first-child::after,
+  .butterfly-page .break-inside-avoid:hover > div:first-child::after {
+    opacity: 0.80; /* a little more translucent than the video */
+    transform: translate(-50%, -50%);
+  }
 }
 
 .hover-media-wrap img,
@@ -372,4 +537,37 @@
   object-fit: cover !important;
   display: block !important;
   border-radius: 10px !important;
+}
+
+/* Mobile Navigation CSS Transition Rules & Active State */
+#mobile-nav-overlay {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  transition: opacity 400ms ease-in-out !important;
+}
+
+#mobile-nav-panel {
+  width: 88vw !important;
+  max-width: 88vw !important;
+  height: 100vh !important;
+  background-color: #FFFFFF !important;
+  color: #1A1420 !important;
+  transition: transform 400ms ease-in-out !important;
+}
+
+@media (min-width: 1024px) {
+  #mobile-nav-panel {
+    width: 400px !important;
+    max-width: 400px !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mobile-nav-item a {
+    display: block;
+    transition: transform 250ms ease-out, opacity 250ms ease-out;
+  }
+  .mobile-nav-item a:active {
+    opacity: 0.65;
+    transform: translateX(5px);
+  }
 }
