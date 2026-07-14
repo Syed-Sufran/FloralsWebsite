@@ -1,8 +1,24 @@
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full loading">
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Prevent Flash of Unstyled Content (FOUC) -->
+  <style>
+    html.loading body {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+  <noscript>
+    <style>
+      html.loading body {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +27,8 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <link rel="preload" href="/images/Pic1_Desktop.webp" as="image" media="(min-width: 768px)" />
-  <link rel="preload" href="/images/Pic1_Mobile.webp" as="image" media="(max-width: 767px)" />
+  <link rel="preload" href="/images/Pic1_Desktop.webp" as="image" media="(min-width: 768px)" fetchpriority="high" />
+  <link rel="preload" href="/images/Pic1_Mobile.webp" as="image" media="(max-width: 767px)" fetchpriority="high" />
 
   <meta name="description"
     content="Zoya's Florals — bespoke handcrafted bouquets, butterfly light-up arrangements, chocolate gift boxes, and custom floral poetry for every occasion." />
@@ -98,28 +114,30 @@
         <source media="(min-width: 768px)" srcset="/images/Pic1_Desktop.webp">
         <img src="/images/Pic1_Mobile.webp"
           alt="Signature luxury crimson rose bouquet arranged with structural red wraps"
-          class="w-full h-full object-cover object-center" />
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchpriority="high" />
       </picture>
       <picture
         class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
         <source media="(min-width: 768px)" srcset="/images/LightUpButterFly.webp">
         <img src="/images/LightUpButterFly.webp"
           alt="Heart-shaped arrangement of rich roses and golden chocolates presented on a velvet chair"
-          class="w-full h-full object-cover object-center" loading="lazy" />
+          class="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
       </picture>
       <picture
         class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
         <source media="(min-width: 768px)" srcset="/images/Pic2_Desktop.webp">
         <img src="/images/Pic2_Mobile.webp"
           alt="Elegantly draped red rose bouquet lined with dark foliage in sleek black wrapping"
-          class="w-full h-full object-cover object-center" loading="lazy" />
+          class="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
       </picture>
       <picture
         class="slide absolute inset-0 w-full h-full opacity-0 z-0 transition-opacity duration-[1200ms] ease-in-out">
         <source media="(min-width: 768px)" srcset="/images/Pic3_Desktop.webp">
         <img src="/images/Pic3_Mobile.webp"
           alt="Angelic white wrap bouquet decorated with feather wings and matching silk ribbons"
-          class="w-full h-full object-cover object-center" loading="lazy" />
+          class="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
       </picture>
 
       <div class="absolute inset-0 bg-[#D4457C] mix-blend-color opacity-[0.12] pointer-events-none z-20"
@@ -176,8 +194,8 @@
 
     <div id="floral-divider-container"
       class="sticky top-[-8vh] w-full h-auto md:h-[15vh] z-50 pointer-events-none overflow-hidden opacity-100">
-      <img src="/images/bouquet_cutout.png" alt="Handcrafted bouquet divider silhouette"
-        class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none" />
+      <img src="/images/bouquet_cutout.png" width="2752" height="1536" style="aspect-ratio: 2752 / 1536;" alt="Handcrafted bouquet divider silhouette"
+        class="w-full h-auto md:h-full md:object-cover object-center select-none pointer-events-none" loading="lazy" decoding="async" />
     </div>
 
     <!-- Mobile Collections Header -->
@@ -197,7 +215,7 @@
 
         <!-- 1. Background image: full-bleed background filling the ENTIRE card -->
         <img src="/images/ButterflyFinal.webp" alt="Butterfly Bouquet Collection"
-          class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+          class="absolute inset-0 w-full h-full object-cover object-center z-0" loading="lazy" decoding="async" />
 
         <!-- 2. Gradient overlay: sitting above the image but below the text content -->
         <div class="absolute inset-0 z-10"
@@ -240,7 +258,7 @@
 
         <!-- 1. Background image: full-bleed background filling the ENTIRE card -->
         <img src="/images/BWMFinal.webp" alt="Theme Bouquets"
-          class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+          class="absolute inset-0 w-full h-full object-cover object-center z-0" loading="lazy" decoding="async" />
 
         <!-- 2. Gradient overlay: HORIZONTAL linear-gradient -->
         <div class="absolute inset-0 z-10"
@@ -283,7 +301,7 @@
 
         <!-- 1. Background image: full-bleed background filling the ENTIRE card -->
         <img src="/images/chocolate_boxFinal.webp" alt="Curated Gift Editions"
-          class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+          class="absolute inset-0 w-full h-full object-cover object-center z-0" loading="lazy" decoding="async" />
 
         <!-- 2. Gradient overlay: VERTICAL linear-gradient, stronger and starting higher up -->
         <div class="absolute inset-0 z-10"
@@ -326,7 +344,7 @@
 
         <!-- 1. Background image: full-bleed background filling the ENTIRE card -->
         <img src="/images/chocolate_bookehFinal__1_.webp" alt="Chocolate Bouquets"
-          class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+          class="absolute inset-0 w-full h-full object-cover object-center z-0" loading="lazy" decoding="async" />
 
         <!-- 2. Gradient overlay: VERTICAL linear-gradient, gentler than Card 3 -->
         <div class="absolute inset-0 z-10"
@@ -366,7 +384,7 @@
       <div class="card overflow-hidden pointer-events-auto flex flex-col items-center justify-center text-center px-8"
         id="card-5" style="transform: translateY(48px) scale(0.88); z-index: 10;">
         <img src="/images/customBokeh.webp" alt="Bespoke custom floral creation"
-          class="absolute inset-0 w-full h-full object-cover object-center opacity-60" loading="lazy" />
+          class="absolute inset-0 w-full h-full object-cover object-center opacity-60" loading="lazy" decoding="async" />
         <div class="absolute inset-0"
           style="background: radial-gradient(ellipse at center, transparent 100%, rgba(26,20,32,0.75) 100%);"></div>
         <div class="relative z-10">
@@ -457,10 +475,10 @@
         <!-- Butterfly Bouquet (Largest - Primary Focus) -->
         <div
           class="absolute top-[-17%] right-[4%] xl:right-[8%] w-[44%] max-w-[650px] min-w-[260px] flex flex-col items-center -rotate-12">
-          <img id="collection-img-butterfly" src="/images/butterfly_fixed.png" alt="Butterfly Bouquet Collection"
+          <img id="collection-img-butterfly" src="/images/butterfly_fixed.png" width="1376" height="768" style="aspect-ratio: 1376 / 768;" alt="Butterfly Bouquet Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             onclick="window.location.href='/collections/butterfly/'" data-title="Butterfly Bouquet Collection"
-            data-body="Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry." />
+            data-body="Handcrafted paper butterflies integrated with soft glowing lights, illuminating warm, delicate floral poetry." loading="lazy" decoding="async" />
           <div
             class="collection-shadow absolute bottom-[-14px] left-1/2 -translate-x-1/2 w-[35%] h-[12px] bg-black/45 rounded-full blur-[8px] opacity-50 transition-all duration-400 ease-out">
           </div>
@@ -488,10 +506,10 @@
         <!-- BMW Bouquet (Smallest) -->
         <div
           class="absolute top-[-20%] left-[0%] xl:left-[0%] w-[34%] max-w-[450px] min-w-[140px] rotate-12 flex flex-col items-center">
-          <img id="collection-img-bmw" src="/images/BMW.png" alt="BMW Bouquet Collection"
+          <img id="collection-img-bmw" src="/images/BMW.png" width="1792" height="2400" style="aspect-ratio: 1792 / 2400;" alt="BMW Bouquet Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             onclick="window.location.href='/collections/themed/'" data-title="Theme Bouquets"
-            data-body="Personalized handcrafted bouquets inspired by passions, memories and meaningful moments." />
+            data-body="Personalized handcrafted bouquets inspired by passions, memories and meaningful moments." loading="lazy" decoding="async" />
           <div
             class="collection-shadow absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-[50%] h-[10px] bg-black/45 rounded-full blur-[6px] opacity-50 transition-all duration-400 ease-out">
           </div>
@@ -516,10 +534,10 @@
         <!-- Gift Box Bouquet (Medium) -->
         <div
           class="absolute top-[18%] right-[3%] xl:right-[1%] w-[30%] max-w-[350px] min-w-[180px] flex flex-col items-center">
-          <img id="collection-img-giftbox" src="/images/Giftbox.png" alt="Gift Box Collection"
+          <img id="collection-img-giftbox" src="/images/Giftbox.png" width="1792" height="2400" style="aspect-ratio: 1792 / 2400;" alt="Gift Box Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             onclick="window.location.href='/collections/curated-gifts/'" data-title="Curated Gift Editions"
-            data-body="Bouquets built around what they'll actually use — makeup, keepsakes, and small indulgences." />
+            data-body="Bouquets built around what they'll actually use — makeup, keepsakes, and small indulgences." loading="lazy" decoding="async" />
           <div
             class="collection-shadow absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-[65%] h-[10px] bg-black/45 rounded-full blur-[7px] opacity-50 transition-all duration-400 ease-out">
           </div>
@@ -544,10 +562,10 @@
         <!-- Chocolate Bouquet (Slightly larger than Gift Box) -->
         <div
           class="absolute top-[37%] left-[30%] w-[30%] max-w-[350px] min-w-[210px] rotate-6 flex flex-col items-center">
-          <img id="collection-img-chocolate" src="/images/chocolate.png" alt="Chocolate Bouquet Collection"
+          <img id="collection-img-chocolate" src="/images/chocolate.png" width="1792" height="2400" style="aspect-ratio: 1792 / 2400;" alt="Chocolate Bouquet Collection"
             class="collection-img w-full h-auto object-contain cursor-pointer transition-all duration-400 ease-out"
             onclick="window.location.href='/collections/chocolate-bouquet/'" data-title="Chocolate Bouquets"
-            data-body="Gourmet chocolates arranged like blooms, wrapped for the moments that call for something sweeter." />
+            data-body="Gourmet chocolates arranged like blooms, wrapped for the moments that call for something sweeter." loading="lazy" decoding="async" />
           <div
             class="collection-shadow absolute bottom-[-14px] left-1/2 -translate-x-1/2 w-[60%] h-[12px] bg-black/45 rounded-full blur-[8px] opacity-50 transition-all duration-400 ease-out">
           </div>

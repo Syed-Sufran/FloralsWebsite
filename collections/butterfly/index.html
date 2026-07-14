@@ -1,8 +1,24 @@
-﻿<!doctype html>
-<html lang="en" class="h-full bg-[#1A1420]">
+<!doctype html>
+<html lang="en" class="h-full bg-[#1A1420] loading">
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Prevent Flash of Unstyled Content (FOUC) -->
+  <style>
+    html.loading body {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+  <noscript>
+    <style>
+      html.loading body {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +82,7 @@
         data-images="/ButterFlyCollection/pink.webp,/ButterFlyCollection/BUTTERFLY BOUQUET🦋Made in all colors! (3).webp,/ButterFlyCollection/BUTTERFLY BOUQUET🦋Made in all colors! (5).webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
           <img id="prod-img-2-gallery" src="/ButterFlyCollection/pink.webp" alt="Pink Butterfly Bouquet"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -79,7 +95,7 @@
         data-images="/ButterFlyCollection/red.webp,/ButterFlyCollection/❤️❤️ (1).webp,/ButterFlyCollection/❤️❤️.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[1.1]">
           <img id="prod-img-3-gallery" src="/ButterFlyCollection/red.webp" alt="Red Butterfly Bouquet"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -109,9 +125,8 @@
 
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
-          <img
-            src="/ButterFlyCollection/The very first florist to make this wing bouquet in town🦋😌❤️ there was a different excitement  (3).webp"
-            alt="Bouquet Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+          <img src="/ButterFlyCollection/The very first florist to make this wing bouquet in town🦋😌❤️ there was a different excitement  (3).webp"
+            alt="Bouquet Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
@@ -119,7 +134,7 @@
           <div class="relative w-full h-[52vh] flex items-center justify-center">
             <video id="carousel-video-0"
               src="/ButterFlyCollection/The wing bouquet🤍📍Collection-Jayanagar,Bangalore📦All India deliveryCustomisation Done ☑️ DM F.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button id="video-mute-btn-0"
               class="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -130,9 +145,8 @@
 
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
-          <img
-            src="/ButterFlyCollection/The very first florist to make this wing bouquet in town🦋😌❤️ there was a different excitement  (4).webp"
-            alt="Bouquet Look" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+          <img src="/ButterFlyCollection/The very first florist to make this wing bouquet in town🦋😌❤️ there was a different excitement  (4).webp"
+            alt="Bouquet Look" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>
@@ -181,21 +195,19 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ButterFlyCollection/Book_edge_studio_shoot_2K_202607140225.webp" alt="Bouquet Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
-          <img
-            src="/ButterFlyCollection/❤️🦋❤️🦋❤️🦋📍Collection-Jayanagar,Bangalore📦All India deliveryCustomisation Done ☑️ DM FOR MOR (1).webp"
-            alt="Bouquet View" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+          <img src="/ButterFlyCollection/❤️🦋❤️🦋❤️🦋📍Collection-Jayanagar,Bangalore📦All India deliveryCustomisation Done ☑️ DM FOR MOR (1).webp"
+            alt="Bouquet View" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
-          <img
-            src="/ButterFlyCollection/❤️🦋❤️🦋❤️🦋📍Collection-Jayanagar,Bangalore📦All India deliveryCustomisation Done ☑️ DM FOR MOR.webp"
-            alt="Bouquet Look" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+          <img src="/ButterFlyCollection/❤️🦋❤️🦋❤️🦋📍Collection-Jayanagar,Bangalore📦All India deliveryCustomisation Done ☑️ DM FOR MOR.webp"
+            alt="Bouquet Look" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>
@@ -244,7 +256,7 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ButterFlyCollection/BUTTERFLY BOUQUET🦋Made in all colors! (3).webp" alt="Bouquet Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
@@ -252,7 +264,7 @@
           <div class="relative w-full h-[52vh] flex items-center justify-center">
             <video id="carousel-video-2"
               src="/ButterFlyCollection/Was waiting since long to make out this pretty trending design.And there it is😍💕🦋BUTTERFLY BO.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button id="video-mute-btn-2"
               class="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -264,7 +276,7 @@
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ButterFlyCollection/BUTTERFLY BOUQUET🦋Made in all colors! (5).webp" alt="Bouquet Look"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>
@@ -313,13 +325,13 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ButterFlyCollection/❤️❤️ (1).webp" alt="Bouquet Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ButterFlyCollection/❤️❤️.webp" alt="Bouquet Look"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>

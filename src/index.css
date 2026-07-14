@@ -846,3 +846,15 @@
     color: #1A1420 !important;
   }
 }
+
+/* Prevent Flash of Unstyled Content (FOUC) */
+html.loading body {
+  opacity: 0;
+  visibility: hidden;
+}
+
+html.loaded body {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .25s ease;
+}

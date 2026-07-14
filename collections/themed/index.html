@@ -1,8 +1,24 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="h-full bg-[#1A1420]">
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#1A1420] loading">
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Prevent Flash of Unstyled Content (FOUC) -->
+  <style>
+    html.loading body {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+  <noscript>
+    <style>
+      html.loading body {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +83,7 @@
         data-images="/ThemedCollection/Graduation.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
           <img id="prod-img-2" src="/ThemedCollection/Graduation.webp" alt="Graduation Doll"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -80,7 +96,7 @@
         data-video="/ThemedCollection/hotwvid.mp4" data-images="/ThemedCollection/Hotwheels.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
           <img id="prod-img-3" src="/ThemedCollection/Hotwheels.webp" alt="Wrom Wrom"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -92,7 +108,7 @@
       <div id="prod-card-4" class="break-inside-avoid flex flex-col cursor-pointer"
         data-video="/ThemedCollection/bmwvid.mp4" data-images="/ThemedCollection/BMW.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
-          <img id="prod-img-4" src="/ThemedCollection/BMW.webp" alt="BMW" class="w-full h-full object-cover block" />
+          <img id="prod-img-4" src="/ThemedCollection/BMW.webp" alt="BMW" class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -106,7 +122,7 @@
         data-images="/ThemedCollection/cigarette.webp,/ThemedCollection/cig1.webp,/ThemedCollection/cig2.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
           <img id="prod-img-5" src="/ThemedCollection/cigarette.webp" alt="Cigarettes"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -120,7 +136,7 @@
         data-images="/ThemedCollection/ballon.webp,/ThemedCollection/blon.webp,/ThemedCollection/Adorable rose box with heart shaped balloon Customise yours!!!DM FOR QUERIES💬 (3).webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[0.8]">
           <img id="prod-img-6" src="/ThemedCollection/ballon.webp" alt="Heart Balloon Box"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -150,9 +166,8 @@
 
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
-          <img
-            src="/ThemedCollection/Life is a garden, and butterflies are the sparkles that make it shine.A butterfly bouquet, a spr (4).webp"
-            alt="Bouquet Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+          <img src="/ThemedCollection/Life is a garden, and butterflies are the sparkles that make it shine.A butterfly bouquet, a spr (4).webp"
+            alt="Bouquet Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
@@ -160,7 +175,7 @@
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
             <video src="/ThemedCollection/Give her something different and prettyy%F0%9F%92%95.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -214,15 +229,14 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ThemedCollection/Batman2.webp" alt="Batman Bouquet Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video src="/ThemedCollection/batmanvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
-              playsinline></video>
+            <video src="/ThemedCollection/batmanvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -277,9 +291,8 @@
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video
-              src="/ThemedCollection/The Graduation Doll Bouquet to make her proud moment even special🎓🤍📍Collection-Jayanagar,Bang.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+            <video src="/ThemedCollection/The Graduation Doll Bouquet to make her proud moment even special🎓🤍📍Collection-Jayanagar,Bang.mp4"
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -292,9 +305,8 @@
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video
-              src="/ThemedCollection/Because every moment are meant to be special and memorable 🎓🤍🖤📍Collection-Jayanagar,Bangalor.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+            <video src="/ThemedCollection/Because every moment are meant to be special and memorable 🎓🤍🖤📍Collection-Jayanagar,Bangalor.mp4"
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -349,8 +361,7 @@
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video src="/ThemedCollection/hotwvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
-              playsinline></video>
+            <video src="/ThemedCollection/hotwvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -404,8 +415,7 @@
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video src="/ThemedCollection/bmwvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
-              playsinline></video>
+            <video src="/ThemedCollection/bmwvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -458,15 +468,14 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ThemedCollection/cig1.webp" alt="Cigarettes Bouquet Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video src="/ThemedCollection/cigvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop
-              playsinline></video>
+            <video src="/ThemedCollection/cigvid.mp4" class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -478,7 +487,7 @@
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ThemedCollection/cig2.webp" alt="Cigarettes Bouquet Look"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>
@@ -527,7 +536,7 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ThemedCollection/blon.webp" alt="Heart Balloon Box Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
@@ -535,7 +544,7 @@
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
             <video src="/ThemedCollection/Heart balloon floral box ❤️.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -546,10 +555,9 @@
 
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
-          <img
-            src="/ThemedCollection/Adorable rose box with heart shaped balloon Customise yours!!!DM FOR QUERIES💬 (3).webp"
+          <img src="/ThemedCollection/Adorable rose box with heart shaped balloon Customise yours!!!DM FOR QUERIES💬 (3).webp"
             alt="Heart Balloon Box Look"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>

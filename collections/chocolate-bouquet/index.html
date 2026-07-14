@@ -1,8 +1,24 @@
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full loading">
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Prevent Flash of Unstyled Content (FOUC) -->
+  <style>
+    html.loading body {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+  <noscript>
+    <style>
+      html.loading body {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +82,7 @@
         data-images="/ChocoBouquetCollection/cferero.webp,/ChocoBouquetCollection/Chocolate bouquets are LOVE❤️Customisation Available.webp,/ChocoBouquetCollection/ferrero1.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
           <img id="prod-img-2" src="/ChocoBouquetCollection/cferero.webp" alt="Ferrero Classic Love"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -79,7 +95,7 @@
         data-images="/ChocoBouquetCollection/cblack.webp,/ChocoBouquetCollection/Bouquet for him💋.webp,/ChocoBouquetCollection/BFH1.webp,/ChocoBouquetCollection/BFH.webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[0.9]">
           <img id="prod-img-3" src="/ChocoBouquetCollection/cblack.webp" alt="Midnight Noir for Him"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -92,7 +108,7 @@
         data-images="/ChocoBouquetCollection/cwhite.webp,/ChocoBouquetCollection/Cute Bouquet🌸🤍 (2).webp,/ChocoBouquetCollection/Cute Bouquet🌸🤍 (3).webp">
         <div class="w-full bg-black/20 overflow-hidden relative aspect-[3/4]">
           <img id="prod-img-4" src="/ChocoBouquetCollection/cwhite.webp" alt="Blushing Pastel Blooms"
-            class="w-full h-full object-cover block" />
+            class="w-full h-full object-cover block" loading="lazy" decoding="async" />
           <div class="hover-media-wrap"></div>
         </div>
         <p class="text-[#F2EAE4] text-[11px] font-sans font-light tracking-widest uppercase mt-2.5">
@@ -123,22 +139,21 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/670831589_17910829209381579_6992982473941094635_n.webp"
-            alt="Golden Rocher Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            alt="Golden Rocher Detail" class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/goldimg.webp" alt="Golden Rocher Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Video -->
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video
-              src="/ChocoBouquetCollection/AQMa3BCG2iOECcMrehFgxLK_HyGJ8vhl84xW0xhgZKnGv3jccCe8EEhukx97la668FQFHkWv4U7C4SHsBPFnNUf6qHrmlFj7.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+            <video src="/ChocoBouquetCollection/AQMa3BCG2iOECcMrehFgxLK_HyGJ8vhl84xW0xhgZKnGv3jccCe8EEhukx97la668FQFHkWv4U7C4SHsBPFnNUf6qHrmlFj7.mp4"
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -193,22 +208,21 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/kinderimg.webp" alt="Kinder Box Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/kinderzoom.webp" alt="Love Quote Rose Detail"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 3: Video -->
         <div
           class="w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-6 relative video-slide-block">
           <div class="relative w-full h-[52vh] flex items-center justify-center">
-            <video
-              src="/ChocoBouquetCollection/Red roses and Harry Potter Kinder joy with those beautiful butterflies are absolutely gorgeous🥀.mp4"
-              class="max-w-full max-h-[52vh] object-contain" loop playsinline></video>
+            <video src="/ChocoBouquetCollection/Red roses and Harry Potter Kinder joy with those beautiful butterflies are absolutely gorgeous🥀.mp4"
+              class="max-w-full max-h-[52vh] object-contain" loop preload="metadata" muted playsinline></video>
             <!-- Custom Mute/Unmute toggle -->
             <button
               class="video-mute-btn absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 text-[#F2EAE4] text-[10px] tracking-widest uppercase px-3 py-1.5 rounded-full backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 z-20">
@@ -264,13 +278,13 @@
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/Chocolate bouquets are LOVE❤️Customisation Available.webp"
             alt="Ferrero Bouquet Love Quote"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/ferrero1.webp" alt="Ferrero Bouquet Classic Look"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>
@@ -318,19 +332,19 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/Bouquet for him💋.webp" alt="Midnight Noir for Him Slide 1"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/BFH1.webp" alt="Midnight Noir for Him Slide 2"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 3: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/BFH.webp" alt="Midnight Noir for Him Slide 2"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
       </div>
@@ -379,13 +393,13 @@
         <!-- Slide 1: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/Cute Bouquet🌸🤍 (2).webp" alt="Blushing Pastel Blooms Slide 1"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
         <!-- Slide 2: Image -->
         <div class="w-full flex-shrink-0 snap-center flex items-center justify-center px-6">
           <img src="/ChocoBouquetCollection/Cute Bouquet🌸🤍 (3).webp" alt="Blushing Pastel Blooms Slide 2"
-            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" />
+            class="max-w-full max-h-[52vh] object-contain select-none pointer-events-none" loading="lazy" decoding="async" />
         </div>
 
 

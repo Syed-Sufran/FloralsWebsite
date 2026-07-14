@@ -1,5 +1,21 @@
 import './index.css';
 
+// Remove loading class to fade in page once styles are applied
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove('loading');
+      document.documentElement.classList.add('loaded');
+    });
+  });
+} else {
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove('loading');
+    document.documentElement.classList.add('loaded');
+  });
+}
+
+
 // Select all slideshow slides
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
@@ -181,14 +197,34 @@ function initScrollAnimations() {
     }
   }
 
+  let observer = null;
+
   function setupScrollListener() {
     if (mediaQuery.matches) {
-      if (!scrollListenerActive) {
-        window.addEventListener('scroll', onScroll, { passive: true });
-        scrollListenerActive = true;
+      if (!observer) {
+        observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!scrollListenerActive) {
+                window.addEventListener('scroll', onScroll, { passive: true });
+                scrollListenerActive = true;
+                updateTransforms();
+              }
+            } else {
+              if (scrollListenerActive) {
+                window.removeEventListener('scroll', onScroll);
+                scrollListenerActive = false;
+              }
+            }
+          });
+        }, { rootMargin: '100px 0px 100px 0px' });
+        observer.observe(section);
       }
-      updateTransforms();
     } else {
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
       if (scrollListenerActive) {
         window.removeEventListener('scroll', onScroll);
         scrollListenerActive = false;

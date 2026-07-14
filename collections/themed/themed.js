@@ -1,5 +1,21 @@
 import '../../src/index.css';
 
+// Remove loading class to fade in page once styles are applied
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove('loading');
+      document.documentElement.classList.add('loaded');
+    });
+  });
+} else {
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove('loading');
+    document.documentElement.classList.add('loaded');
+  });
+}
+
+
 // Saved scroll position to restore when overlay is closed
 let savedScrollY = 0;
 
