@@ -45,7 +45,13 @@
 
 
   <link rel="canonical" href="https://zoyasfloral.in/" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+
+  <link rel="manifest" href="/favicon/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +66,7 @@
     content="Best Handcrafted Custom Bouquets, Butterfly Bouquets, Themed Floral Gifts, Chocolate Bouquets and Curated Gift Boxes in Bangalore. Pan-India shipping available." />
 
 
-  <title>Zoya's Florals | Best Handcrafted Bouquets &amp; Best Bespoke Gift Experiences</title>
+  <title>Zoya's Floral | Best Handcrafted Bouquets &amp; Best Bespoke Gift Experiences</title>
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Zoya's Floral" />
@@ -153,6 +159,12 @@
           Custom Bouquets
         </a>
       </div>
+      <div class="mobile-nav-item border-b border-[#1A1420]/5 pb-6">
+        <a id="nav-instagram" href="https://www.instagram.com/zoyasfloral__" target="_blank" rel="noopener noreferrer"
+          class="block font-display font-light text-xl tracking-[0.15em] text-[#1A1420] uppercase">
+          Instagram
+        </a>
+      </div>
     </nav>
   </div>
 
@@ -219,17 +231,22 @@
         </h1>
         <h2
           class="font-display font-medium text-3xl md:text-4xl lg:text-5xl text-[#C9A84C] italic leading-tight mb-3 md:mb-5">
-          Every bouquet is a poem, handwritten in petals.
+          Every Bouquet Tells a Story Worth Remembering.
         </h2>
         <p class="font-body font-light text-[#CDBFC7] text-xs md:text-sm lg:text-base leading-relaxed max-w-sm">
-          We compose bespoke floral poetry and premium gift experiences, handcrafted in our studio for the moments that
-          transcend words.
+          Custom floral bouquets and premium gift experiences, handcrafted in Bangalore and delivered across India for
+          birthdays, proposals, anniversaries, and every unforgettable occasion.
         </p>
-        <div class="mt-5 md:mt-8">
-          <a href="https://www.instagram.com/zoyasfloral__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank" rel="noopener noreferrer"
+        <div class="mt-5 md:mt-8 flex flex-col gap-3">
+          <a href="#collections-section" id="cta-explore-collections"
+            onclick="event.preventDefault(); var target = window.innerWidth >= 768 ? 'collections-section' : 'card-stack-section'; document.getElementById(target).scrollIntoView({ behavior: 'smooth' });"
             class="inline-block text-[#C9A84C] hover:text-[#F6F0EB] text-[11px] md:text-xs font-sans font-light tracking-[0.2em] uppercase border-b border-[#C9A84C]/30 hover:border-[#F6F0EB] pb-1 transition-all duration-300 select-none">
-            Get Your Bouquet &rarr;
+            Explore Collections &rarr;
+          </a>
+          <a href="https://wa.me/918105956981?text=Hi%20Zoya's%20Floral!%20I'd%20like%20to%20create%20a%20custom%20bouquet."
+            id="cta-custom-bouquet" target="_blank" rel="noopener noreferrer"
+            class="inline-block text-[#C9A84C] hover:text-[#F6F0EB] text-[11px] md:text-xs font-sans font-light tracking-[0.2em] uppercase border-b border-[#C9A84C]/30 hover:border-[#F6F0EB] pb-1 transition-all duration-300 select-none">
+            Create a Custom Bouquet &rarr;
           </a>
         </div>
       </div>
